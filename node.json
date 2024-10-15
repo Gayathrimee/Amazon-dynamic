@@ -1,0 +1,19 @@
+{
+    "navBar":[
+        {
+            "bgImage":"images/new-nav-sprite-global-2x_blueheaven-privacy._CB600086755_.png",
+            "in":".in",
+            "sign":"Sign in ›",
+            "deleivery":"Delivering to Delhi 110001 - Update location ⌵"
+        }
+    ],
+    "divone":[
+        {
+            "filter":"Filters",
+            "uls":[
+                "Xiaomi", "Exchange","Google","Projector","Gadgets","Gimbal",
+                "Controller","Watch","Fan","Cleaner","Musical","Stickers"
+            ]
+        }
+    ]
+}
