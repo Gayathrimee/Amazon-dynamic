@@ -15,5 +15,29 @@
                 "Controller","Watch","Fan","Cleaner","Musical","Stickers"
             ]
         }
+    ],
+    "navbarTwoTop":[
+        {
+        "delivery":"Delivering to Delhi 110001 ",
+        "p":"Update location",
+        "in":".in",
+        "alltxt":"All",
+        "all":["All Categories", "Alexa Skills", "Amazon Devices","Amazon Fashion","Amazon Fresh", "Amazon Fresh Meat",
+                "Amazon Pharmacy","Baby","Beauty","Books","Car & MotorBike","Clothing & Accessories","Deals","Electronics","Furniture"],
+        "en":"EN",
+        "p1":"Hello, sign in",
+        "span1":"Account & Lists <p></p>",
+        "p2":"Returns",
+        "span2":"& Orders",
+        "value":"Mobiles",
+        "placeholder":"Search Amazon.in"
+        }
+    ],
+    "navbarTwoBotm":[
+        {
+            "all":"All",
+            "fresh":"Fresh",
+            "uls":["Fresh","MX Player","Sell","Best Sellers","Today's Deals","Mobiles"]
+        }
     ]
-}
+}                

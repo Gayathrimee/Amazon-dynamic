@@ -11,7 +11,10 @@
 body{
     font-family: ember-reg;
 }
-nav{
+.desktop-view{
+    display: none;
+}
+.mobile-view nav{
     position: relative;
     z-index: 208;
     font-size: 12px;
@@ -418,4 +421,37 @@ nav{
     overflow-y: hidden;
     width: 100%;
     overflow-x: scroll;
+    scrollbar-width: none;
+}
+.botm-flex .ul-div{
+    margin: 6px 8px 6px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.botm-flex .ul-div:first-child{
+    padding-left: 8px;
+}
+.ul-div .ul-a{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    border: 1px solid #d5dbdb;
+    border-radius: 8px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #000;
+}
+.ul-a .li-div{
+    width: auto;
+    text-align: center;
+    margin: 7px 8px;
+}
+.li-div span{
+    font-size: 13px;
+    line-height: 18px;
+    color: #0f1111;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
 }
