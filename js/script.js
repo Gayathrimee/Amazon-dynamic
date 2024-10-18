@@ -161,7 +161,183 @@ document.addEventListener('DOMContentLoaded', ()=>{
         })
             // --------------------------------------------
 
+        const Mobiles = document.querySelector('.mobiles')
 
+        function renderingPage(items){
+
+            Mobiles.innerHTML = ''
+
+            if(items.length === 0){
+                const noElement = document.createElement('div')
+                noElement.className = 'no-element'
+                noElement.innerHTML = `Oops! Item Not Found
+                <img src='images/search-not-found-illustration-download-in-svg-png-gif-file-formats--page-error-404-empty-state-pack-user-interface-illustrations-5210416.webp'>`
+
+                Mobiles.appendChild(noElement)
+
+                return     
+            }
+
+            for(i = 1; i <= data.Phones.length; i++){
+                const item = items[i]
+
+                const contPad = document.createElement('div')
+                contPad.className = 'conts-in main-pad'
+                const inConts = document.createElement('div')
+                inConts.className = 'inconts-flex cont-border'
+                contPad.append(inConts)
+    
+                Mobiles.append(contPad)
+
+                    // mob
+                const mobSide = document.createElement('div')
+                mobSide.className = 'mob-side'
+                const mobFlex = document.createElement('div')
+                mobFlex.className = 'mob-flex'
+
+                const mobImageDiv = document.createElement('a')
+                const mobImg = document.createElement('img')
+                mobImg.src = item.img
+                mobImg.className = item.imgclass
+
+                mobImageDiv.append(mobImg)
+                mobFlex.append(mobImageDiv)
+                mobSide.append(mobFlex)
+
+                    // writes
+                const contentSide = document.createElement('div')
+                contentSide.className = 'cont-side'
+                const contMarg = document.createElement('div')
+                contMarg.className = 'cont-marg'
+
+                    // .....
+                const contentOne = document.createElement('div')
+                contentOne.className = 'content-1'
+
+                const sponsered = document.createElement('div')
+                sponsered.className = 'sponsored'
+                sponsered.innerHTML = `
+                <span>${item.spons}</span>
+                <p>`
+
+                const mobName = document.createElement('div')
+                mobName.className = 'mobNames'
+                mobName.innerHTML = `<h2>${item.h2}</h2>`
+
+                contentOne.append(sponsered,mobName)
+
+                    // .....
+                const contentTwo = document.createElement('div')
+                contentTwo.className = 'content-2'
+
+                const stars = document.createElement('div')
+                stars.className = 'stars'
+                stars.innerHTML = `
+                <span class='star-1'>
+                <i class='star-rate all-stars'></i>
+                <i class='arw all-stars'></i>
+                </span>
+
+                <span class='star-2'><p>${item.star}</p></span>`
+
+                const bought = document.createElement('div')
+                bought.className = 'bought'
+                bought.innerHTML = `<p>${item.bought}</p>`
+
+                contentTwo.append(stars,bought)
+
+                    // .....
+                const contentThree = document.createElement('div')
+                contentThree.className = 'content-3 inconts-flex'
+
+                const threeLeft = document.createElement('div')
+                threeLeft.className = 'three-left main-pad'
+
+                const divOne = document.createElement('div')
+                divOne.className = 'left-div-1 left-div-pad'
+                const oneSubOne = document.createElement('div')
+                oneSubOne.className = 'one-sub-1'
+                oneSubOne.innerHTML = `<span>${item.gif}</span>`
+
+                const oneSubTwo = document.createElement('div')
+                oneSubTwo.className = 'one-sub-2'
+                oneSubTwo.innerHTML = `
+                <div class='a-sub2'>
+                <span class='rs'>${item.rs}</span>
+                <span class='mrp'>${item.mrp}</span>
+                </div>
+                <span class='off'>${item.off}</span>
+                `
+
+                const oneSubThree = document.createElement('div')
+                oneSubThree.className = 'one-sub-3'
+                oneSubThree.innerHTML = `
+                <div class='save-coup'>
+                <span class = 'save'>${item.save}</span>
+                <span class = 'coup'>${item.coup}</span>
+                </div>`
+
+                divOne.append(oneSubOne,oneSubTwo,oneSubThree)
+                            // ===
+                const divTwo = document.createElement('div')
+                divTwo.className = 'left-div-2 left-div-pad'
+
+                const twoSubOne = document.createElement('div')
+                twoSubOne.className = 'two-sub-1 two-sub'
+                twoSubOne.innerHTML = `
+                <span>
+                <i class='bg-2'></i>
+                </span>`
+
+                const twoSubTwo = document.createElement('div')
+                twoSubTwo.className = 'two-sub-2 two-sub'
+                twoSubTwo.innerHTML = `<span class='deliver'>${item.delivery}</span>`
+
+                const twoSubThree = document.createElement('div')
+                twoSubThree.className = 'two-sub-3 two-sub'
+                twoSubThree.innerHTML = `<span class='fastest'>${item.fast}</span>`
+                          
+                divTwo.append(twoSubOne,twoSubTwo,twoSubThree)
+                            // ===
+                const divThree = document.createElement('div')
+                divThree.className = 'left-div-3 left-div-pad'
+                divThree.innerHTML = `<span class='service'>${item.service}</span>`
+
+                            // ===
+                const divFour = document.createElement('div')
+                divFour.className = 'left-div-4 left-div-pad'
+                divFour.innerHTML = `
+                <span class='addcart'>
+                <button>${item.addto}</button>
+                </span>`
+                            // ===
+                const divFive = document.createElement('div')
+                divFive.className = 'left-div-5 left-div-pad'
+                divFive.innerHTML = `
+                <span class ='color'>
+                <a>${item.colors}</a>
+                </span>`
+
+                threeLeft.append(divOne,divTwo,divThree,divFour,divFive)
+
+                const threeRight = document.createElement('div')
+                threeRight.className = 'three-right'
+                const inThreeRight = document.createElement('div')
+                inThreeRight.className = 'main-pad'
+                threeRight.append(inThreeRight)
+
+                contentThree.append(threeLeft,threeRight)
+                    // .....
+                contMarg.append(contentOne,contentTwo,contentThree)
+                contentSide.append(contMarg)
+
+                inConts.append(mobSide, contentSide)
+                
+
+            }
+        }
+
+        renderingPage(data.Phones)
 
             // --------------------------------------------
 

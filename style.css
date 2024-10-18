@@ -14,6 +14,9 @@ body{
 .desktop-view{
     display: none;
 }
+.mobile-view{
+    overflow-x: hidden;
+}
 .mobile-view nav{
     position: relative;
     z-index: 208;
@@ -454,4 +457,21 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 140px;
+}
+.div-2{
+    width: 100%;
+}
+.inconts-flex{
+    display: flex;
+    margin-bottom:8px;
+    width: 100%;
+}
+.main{
+    display: block;
+}
+.mobiles .inconts-flex .mob-side{
+    width: calc(0.41667 * (100vw - 8px));
+}
+.mobiles .mobNames h2{
+    font-size: 14px;
 }

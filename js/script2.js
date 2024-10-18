@@ -238,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const rightForm = document.createElement('form')
 
                 const inForm = document.createElement('div')
+                inForm.className = 'in-form'
                 const spanPad = document.createElement('span')
 
                 const inSpanOne = document.createElement('p')
@@ -253,14 +254,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 spanPad.append(inSpanOne, inSpanTwo)
                 inForm.append(spanPad)
                 rightForm.append(inForm)
-                topRight.append(rightForm)
+                topRight.append(rightForm)            
+
+                        // -----
+                const formUls = document.createElement('div')
+                formUls.className = 'form-uls'
+                const formAllUls = document.createElement('ul')
+
+                item.features.forEach(feat =>{
+                    const options = document.createElement('li')
+                    const liA = document.createElement('a')
+                    liA.href = '#'
+                    liA.textContent = feat
+
+                    options.appendChild(liA)
+                    formAllUls.appendChild(options)
+                })
+                
+                formUls.append(formAllUls)
+                rightForm.append(formUls)
             })
             // ---------------
 
             // main-body
 
             const sideBar = document.querySelector('.sidebar .sides')
-            const contents = document.querySelector('.contents .conts')
 
 
             // ---- sidebar
@@ -271,6 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data.sidebar.forEach((item, idx) => {
                 const allDiv = document.createElement('div')
                 allDiv.className = 'all-div'
+                allDiv.id = item.id
 
                 const txtDiv = document.createElement('div')
                 txtDiv.className = item.class
@@ -299,11 +318,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     const line = document.createElement('div')
                     line.className = 'line'
                     line.innerHTML = `
-                    <div class='line-1'><input></div>
-                    <div class='line-2'><input></div>`
+                    <div class='line-1 rounds'>
+                    <input class='input-1' type=''text'>
+                    <input class='input-2'>
+                    </div>
+                    <div class='line-2 rounds'>
+                    <input class='input-1' type=''text'>
+                    <input class='input-2'>
+                    </div>`
                     const go = document.createElement('div')
                     go.className = 'go'
-                    go.textContent = item.go 
+                    const goSpan = document.createElement('span')
+                    goSpan.textContent = item.go 
+                    go.append(goSpan)
 
                     priceLine.append(line,go)
                     prices.append(priceValue,priceLine)
@@ -329,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         itemLabel = document.createElement('label')
                         itemInput = document.createElement('input')
                         itemInput.type = 'checkbox'
-                        itemInput.value = ''
+                        itemInput.value = ul 
 
                         const itemSpan = document.createElement('span')
                         itemSpan.className = 'item-span'
@@ -352,9 +379,36 @@ document.addEventListener('DOMContentLoaded', () => {
             })
 
 
-            // contents
-            data.Phones.forEach(item =>{
-                
+            // contents   ========= mobiles =============
+
+            const contents = document.querySelector('.contents .conts')
+            // const mainPad = document.querySelector('.main-pad')
+
+            const itemsPerPage = 6
+            let currentPage = 1
+
+            function renderPage(pageNumber, items){
+
+                contents.innerHTML = ''
+
+                if(items.length === 0){
+                    const noElement = document.createElement('div')
+                    noElement.className = 'no-element'
+                    noElement.innerHTML = `Oops! Item Not Found
+                    <img src='images/search-not-found-illustration-download-in-svg-png-gif-file-formats--page-error-404-empty-state-pack-user-interface-illustrations-5210416.webp'>`
+
+                    contents.appendChild(noElement)
+
+                    return
+                }
+
+                const startIndex = (pageNumber - 1) * itemsPerPage
+                const endIndex = Math.min(startIndex + itemsPerPage, items.length)
+
+                for (let i = startIndex; i < endIndex; i++) {
+                    const item = items[i];
+
+                       
                 const contPad = document.createElement('div')
                 contPad.className = 'conts-in main-pad'
                 const inConts = document.createElement('div')
@@ -372,6 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const mobImageDiv = document.createElement('a')
                 const mobImg = document.createElement('img')
                 mobImg.src = item.img
+                mobImg.className = item.imgclass
 
                 mobImageDiv.append(mobImg)
                 mobFlex.append(mobImageDiv)
@@ -505,10 +560,235 @@ document.addEventListener('DOMContentLoaded', () => {
                 contentSide.append(contMarg)
 
                 inConts.append(mobSide, contentSide)
-            })
-         
+                }
 
+            }
+
+
+            // pagination
+
+            function paginationControl(totalItems){
+                const pagination = document.querySelector('.pagination')
+
+                const pageSpan = document.createElement('span')
+                pageSpan.className = 'page-span'
+
+                const totalPages = Math.ceil(totalItems/itemsPerPage)
+
+                pagination.innerHTML = ''
+
+
+                const prevValue = document.createElement('div')
+                prevValue.innerHTML = `
+                <img src = "${data.pagination.prev.img}">
+                ${data.pagination.prev.value}`
+                prevValue.className = data.pagination.prev.class
+
+                pageSpan.append(prevValue)
+
+                // eventlistener
+                prevValue.addEventListener('click', ()=>{
+                    if(currentPage > 1){
+                        currentPage -- 
+                        renderPage(currentPage, data.Phones)
+                        paginationControl(data.Phones.length)
+                       
+                        document.querySelector('.prev').classList.add('click')
+                    }
+
+                })
+                
+                for(let i = 1; i <= totalPages; i++){
+                    
+                    const pageButton = document.createElement('button')
+                    pageButton.innerHTML = `<a>${i}</a>`
+                    
+                    pageSpan.append(pageButton)
+                    pagination.append(pageSpan)
+                   
+                    if(i === currentPage){
+                        pageButton.classList.add('selected')
+                    }
+
+                    pageButton.addEventListener('click', ()=>{
+                        currentPage = i
+                        renderPage(currentPage, data.Phones) 
+
+                        document.querySelectorAll('.page-span button').forEach(btn => {
+                            btn.classList.remove('selected')
+                        })
+
+                        pageButton.classList.add('selected')
+                    })
+
+                    
+                }
+                
+                const nextValue = document.createElement('div')
+                nextValue.innerHTML = `
+                ${data.pagination.next.value}
+                <img src = "${data.pagination.next.img}">`
+                nextValue.className = data.pagination.next.class
+                
+                pageSpan.append(nextValue)
+
+                nextValue.addEventListener('click', ()=>{
+                    if(currentPage < totalPages){
+                        currentPage ++ 
+                        renderPage(currentPage, data.Phones)
+                        paginationControl(data.Phones.length)
+
+                        document.querySelector('.next').classList.add('click')
+                    }
+                })
+            }
+
+            paginationControl(data.Phones.length)
+            renderPage(currentPage, data.Phones)
+            // -------------------------------------------
+         
+        // ================ functions - filtering ====================
+
+        function filterPhonesByBrands() {
+            const brands = document.getElementById('brand')
+        
+            const checkedBrands = Array.from(brands.querySelectorAll('input:checked'))
+
+            if(checkedBrands.length === 0){
+                renderPage(1,data.Phones)
+
+                return 
+            }
+        
+            const selectedBrands = checkedBrands.map(input => input.value.toLowerCase()) 
+        
+            const filteredPhones = data.Phones.filter(phone => 
+                selectedBrands.includes(phone.id.toLowerCase()) 
+            )
+        
+            renderPage(currentPage, filteredPhones)
+        
+            console.log('filteredphones', filteredPhones)
+        }
+        
+        const brandCheckBoxes = document.querySelectorAll('#brand input[type="checkbox"]')
+        brandCheckBoxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterPhonesByBrands)
+        })
+
+
+        // ----------------------
+
+        //  filter by ram
+
+        
+        function filterByRam(){
+            const ramRanges = {
+                "2 to 3.9 GB": { min: 2, max: 3.9 },
+                "4 to 5.9 GB": { min: 4, max: 5.9 },
+                "6 to 7.9 GB": { min: 6, max: 7.9 },
+                "8 to 9.9 GB": { min: 8, max: 9.9 },
+                "10 GB & Above": { min: 10, max: Infinity }
+            };
+            
+            const ram = document.getElementById('ram')
+            const checekdRam = Array.from(ram.querySelectorAll('input:checked'))
+                                .map(input => input.value.toLowerCase())
+
+            const filterPhones = data.Phones.filter(phone => {
+                const ramMatch = phone.h2.match(/(\d+)\s*GB/)
+
+                if(ramMatch){
+                    const ramSize = parseFloat(ramMatch[1])
+
+                    return checekdRam.some(range =>{
+                        const {min,max} = ramRanges[range] || {}
+
+                        if(min !== undefined && max !== undefined){
+                            return ramSize >= min && ramSize <= max
+                        }
+                    })
+                }
+
+                return false
+            })
+
+            renderPage(1,filterPhones)
+        }
+
+        const ramCheckBoxes = document.querySelectorAll('#ram input[type="checkbox"]')
+        ramCheckBoxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterByRam)
+        })
+
+
+        // filter by memory storage
+
+        function filterByStorage(){
+            const storage = document.getElementById('storage')
+            const checkedStorage = Array.from(storage.querySelectorAll('input:checked'))
+                                    .map(input => input.value.toLowerCase().trim().replace(/\s+/g, ''))
+                                
+            console.log('checked storage', checkedStorage)
+
+            if(checkedStorage.length === 0){
+                renderPage(1,data.Phones)
+
+                return 
+            }
+                
+           const filteredPhones = data.Phones.filter(phone => {
+
+            if(!phone.h2 || typeof phone.h2 !== 'string' || phone.h2.trim() === ""){
+                console.warn('missing h2 for phone', phone)
+                return false
+            }
+
+            const h2Text = phone.h2.toLowerCase()
+            console.log('h2text:', h2Text)
+            
+            const storageMatch = h2Text.match(/(\d+\.?\d*)\s*gb\s*(storage|rom)/i)
+
+            if(storageMatch){
+                // const phoneStorage = storageMatch[0].toLowerCase().trim()
+                // const phoneStorage = `${parseInt(storageMatch[1])}gb`
+
+                const phoneStorage = parseInt(storageMatch[1])
+
+                return checkedStorage.some(option =>{
+                    if(option === '512gb&above'){
+                        return phoneStorage >= 512
+
+                    } else if(option === 'upto3.9gb'){
+                        return phoneStorage <= 3 
+
+                    } else {
+                        return option === `${phoneStorage}gb`
+                    }
+                })
+
+                // return checkedStorage.includes(phoneStorage)
+            }
+  
+            return false 
+
+           })
+
+           console.log('filterd phones', filteredPhones)
+
+            renderPage(1,filteredPhones)
+        }
+
+        const storages = document.querySelectorAll('#storage input[type="checkbox"]')
+        storages.forEach(store =>{
+            store.addEventListener('change', filterByStorage)
+        })
+
+        // -------------------------------------------
+
+        // 
+          
             // -------------------------------------------
 
         })
-})
+}) 
