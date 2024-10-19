@@ -337,9 +337,166 @@ document.addEventListener('DOMContentLoaded', ()=>{
             }
         }
 
-        renderingPage(data.Phones)
 
             // --------------------------------------------
 
+            // filter-body
+
+            const filterBody = document.querySelector('.filt-flex')
+
+            data.filterbody.forEach(item =>{
+                const upperbody = document.createElement('div')
+                upperbody.className = 'upper-body'
+
+                const filterDiv = document.createElement('div')
+                filterDiv.className = 'filter-div'
+                filterDiv.innerHTML = `<span>${item.filter}`
+
+                const closeDiv = document.createElement('div')
+                closeDiv.className = 'close-div'
+                closeDiv.innerHTML = `<span>${item.close}`
+
+
+                upperbody.append(filterDiv,closeDiv)
+                filterBody.append(upperbody)
+
+                // -----
+
+                const lowerBody = document.createElement('div');
+                lowerBody.className = 'lower-body';
+
+                const leftDiv = document.createElement('div');
+                leftDiv.className = 'left-div';
+
+                const rightDiv = document.createElement('div');
+                rightDiv.className = 'right-div';
+
+                item.contents.forEach((cont, idx) => {
+
+                    const leftSpanDiv = document.createElement('div');
+                    leftSpanDiv.className = 'left-span';
+                    leftSpanDiv.innerHTML = `<span>${cont.h2}</span>`;
+
+                   
+                    leftSpanDiv.classList.remove('click')
+
+                    if(idx === 0){
+                        leftSpanDiv.classList.add('click')
+                    }
+                    
+                    leftSpanDiv.addEventListener('click', () => {
+                        const allRightSections = document.querySelectorAll('.right-section');
+                        allRightSections.forEach(section => section.style.display = 'none');
+                        
+                        document.getElementById(`right-${idx}`).style.display = 'block';
+
+                        document.querySelectorAll('.left-span').forEach(span =>{
+                            span.classList.remove('click')
+                        })
+                        leftSpanDiv.classList.add('click')
+                    });
+                    
+                    leftDiv.appendChild(leftSpanDiv);
+                    lowerBody.append(leftDiv);
+                    
+                    const rightSection = document.createElement('div');
+                    rightSection.className = 'right-section';
+                    rightSection.id = `right-${idx}`; 
+                    rightSection.style.display = 'none'; 
+                    
+                    if(idx === 0){
+                        rightSection.style.display = 'block'
+                    }
+                    
+                    //  h3-span
+                    const heading = document.createElement('div');
+                    heading.className = 'heading';
+                    heading.innerHTML = `<span>${cont.h3}</span>`;
+                    rightSection.appendChild(heading);
+                    
+                    //  subs (h4 and spans)
+                    cont.subs.forEach(sub => {
+                        const subDiv = document.createElement('div');
+                        subDiv.className = 'sub-div';
+                    
+                        if (sub.h4) {
+                            const h4 = document.createElement('h5');
+                            h4.innerText = sub.h4;
+                            subDiv.appendChild(h4);
+                        }
+                    
+                        const spanDivs = document.createElement('div')
+                        spanDivs.className = 'span-divs'
+                        const spanFlex = document.createElement('div')
+                        spanFlex.className = 'span-flex'
+
+                        sub.span.forEach(spanText => {
+
+                            const span = document.createElement('a');
+                            span.href = '#'
+                            span.innerHTML = `<span>${spanText}`;
+
+                            spanFlex.append(span)
+                            spanDivs.append(spanFlex)
+                            subDiv.appendChild(spanDivs);
+                        });
+                    
+                        rightSection.appendChild(subDiv);
+                    });
+                    
+                    rightDiv.appendChild(rightSection);
+                }); 
+
+                lowerBody.append(leftDiv,rightDiv);
+                filterBody.append(lowerBody);
+
+            })
+
+
+            // event listener for filters
+
+
+            const backgroundBlur = document.createElement('div')
+            backgroundBlur.className = 'back-blur'
+            document.body.append(backgroundBlur)
+
+            // console.log(backgroundBlur)
+
+            const mainFilterBody = document.querySelector('.filterbody')
+            const inBtn = document.querySelector('.inbtn-2')
+
+            const toprightButton = document.querySelector('.top-right')
+            toprightButton.addEventListener('click', (e)=>{
+               
+                e.stopPropagation()
+                backgroundBlur.classList.add('filters')
+                mainFilterBody.classList.add('filters')
+                document.body.classList.add('no-scroll')
+                inBtn.classList.add('rotate')
+
+            })
+
+            window.addEventListener('click', (e)=>{
+                e.stopPropagation()
+
+                if((!mainFilterBody.contains(e.target) && !toprightButton.contains(e.target))){
+                backgroundBlur.classList.remove('filters')
+                mainFilterBody.classList.remove('filters')
+                document.body.classList.remove('no-scroll')
+                inBtn.classList.remove('rotate')
+                }
+            })
+
+            document.querySelector('.close-div span').addEventListener('click', ()=>{
+
+                backgroundBlur.classList.remove('filters')
+                mainFilterBody.classList.remove('filters')
+                document.body.classList.remove('no-scroll')
+                inBtn.classList.remove('rotate')
+
+            })
+                                         
+        renderingPage(data.Phones)
+
         })
-})
+})   

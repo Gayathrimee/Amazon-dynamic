@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const fourDiv = document.createElement('div')
                 const fourZero = document.createElement('span')
-                fourZero.textContent = '0'
+                fourZero.textContent = ''
                 const fourSpan = document.createElement('p')
                 fourSpan.className = 'four-p nav-sprite-3'
 
@@ -254,25 +254,88 @@ document.addEventListener('DOMContentLoaded', () => {
                 spanPad.append(inSpanOne, inSpanTwo)
                 inForm.append(spanPad)
                 rightForm.append(inForm)
-                topRight.append(rightForm)            
+                topRight.append(rightForm)
 
-                        // -----
+                // -----
                 const formUls = document.createElement('div')
                 formUls.className = 'form-uls'
                 const formAllUls = document.createElement('ul')
 
-                item.features.forEach(feat =>{
+                item.features.forEach((txt,idx) => {
                     const options = document.createElement('li')
                     const liA = document.createElement('a')
                     liA.href = '#'
-                    liA.textContent = feat
+                    liA.textContent = txt
+
+                    if(item.classes[idx]){
+                        liA.className = item.classes[idx]
+                    }
+
+                    liA.addEventListener('click', (e)=>{
+                        e.preventDefault()
+                        inSpanTwo.textContent = txt
+                        rightForm.classList.remove('drop')
+
+                        const spanTwoI = document.createElement('i')
+                        spanTwoI.className = 'symbols'
+                        inSpanTwo.append(spanTwoI)
+                    })
 
                     options.appendChild(liA)
                     formAllUls.appendChild(options)
                 })
-                
+
                 formUls.append(formAllUls)
                 rightForm.append(formUls)
+
+                // even listener
+
+                rightForm.addEventListener('click', (e) => {
+                    e.stopPropagation()
+                    rightForm.classList.add('border', 'drop')
+                })
+
+                        // window click
+
+                let windowClickCount = 0;
+
+                window.addEventListener('click', (e) => {
+                    windowClickCount++;  
+
+                    if (windowClickCount === 1) {
+                        e.stopPropagation()
+                        rightForm.classList.remove('drop'); 
+
+                    } else if (windowClickCount === 2) {
+                        rightForm.classList.remove('border');  
+
+                        windowClickCount = 0; 
+
+                        e.stopPropagation()
+                    }
+
+                });
+
+                    // li click
+
+                document.querySelectorAll('.form-uls li').forEach((li, idx) => {
+
+                    if (idx === 0) {
+                        li.classList.add('active')
+                    }
+
+                    li.addEventListener('click', (e) => {
+
+                        rightForm.classList.remove('drop')
+
+                        document.querySelectorAll('.form-uls li').forEach(item => item.classList.remove('active'));
+                        li.classList.add('active')
+
+                        e.stopPropagation()
+                    })
+                })
+
+
             })
             // ---------------
 
@@ -295,23 +358,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 txtDiv.className = item.class
                 txtDiv.textContent = item.txt
 
+                const clearAll = document.createElement('div')
+                clearAll.className = 'clear'
+                clearAll.textContent = 'clear all'
+
                 const itemUls = document.createElement('ul')
 
-                                         
-                if(idx=== 4){
+
+
+                if (idx === 4) {
                     const priceDiv = document.createElement('div')
                     priceDiv.className = 'price-div'
-               
+
                     const txt = document.createElement('div')
-                    txt.className = item.class 
+                    txt.className = item.class
                     txt.textContent = item.name
 
                     const prices = document.createElement('div')
-                    prices.className = 'prices' 
+                    prices.className = 'prices'
 
                     const priceValue = document.createElement('div')
                     priceValue.className = 'price-value'
-                    priceValue.textContent = item.price 
+                    priceValue.textContent = item.price
 
                     const priceLine = document.createElement('div')
                     priceLine.className = 'price-line'
@@ -329,52 +397,52 @@ document.addEventListener('DOMContentLoaded', () => {
                     const go = document.createElement('div')
                     go.className = 'go'
                     const goSpan = document.createElement('span')
-                    goSpan.textContent = item.go 
+                    goSpan.textContent = item.go
                     go.append(goSpan)
 
-                    priceLine.append(line,go)
-                    prices.append(priceValue,priceLine)
-                    priceDiv.append(txt,prices)
+                    priceLine.append(line, go)
+                    prices.append(priceValue, priceLine)
+                    priceDiv.append(txt, prices)
 
                     allDiv.append(priceDiv)
-                
-                } else{
 
-                item.uls.forEach(ul => {
-                    const itemLis = document.createElement('li')
-                    itemUls.append(itemLis)
+                } else {
 
-                    const itemLiA = document.createElement('a')
-
-                    if (idx === 0) {
-                        itemLiA.textContent = ul
-
-                        itemLis.append(itemLiA)
-
-                    }  else {
-
-                        itemLabel = document.createElement('label')
-                        itemInput = document.createElement('input')
-                        itemInput.type = 'checkbox'
-                        itemInput.value = ul 
-
-                        const itemSpan = document.createElement('span')
-                        itemSpan.className = 'item-span'
-                        itemSpan.textContent = ul
-
-                        itemLabel.append(itemInput, itemSpan)
-                        itemLiA.append(itemLabel)
-
-                        // itemLiA.append(itemLiASpan)
-                        itemLis.append(itemLiA)
+                    item.uls.forEach(ul => {
+                        const itemLis = document.createElement('li')
                         itemUls.append(itemLis)
-                        txtDiv.append(itemUls)
-                    }
 
-                })
-            }
+                        const itemLiA = document.createElement('a')
 
-                allDiv.append(txtDiv, itemUls)
+                        if (idx === 0) {
+                            itemLiA.textContent = ul
+
+                            itemLis.append(itemLiA)
+
+                        } else {
+
+                            itemLabel = document.createElement('label')
+                            itemInput = document.createElement('input')
+                            itemInput.type = 'checkbox'
+                            itemInput.value = ul
+
+                            const itemSpan = document.createElement('span')
+                            itemSpan.className = 'item-span'
+                            itemSpan.textContent = ul
+
+                            itemLabel.append(itemInput, itemSpan)
+                            itemLiA.append(itemLabel)
+
+                            // itemLiA.append(itemLiASpan)
+                            itemLis.append(itemLiA)
+                            itemUls.append(itemLis)
+                            txtDiv.append(itemUls)
+                        }
+
+                    })
+                }
+
+                allDiv.append(txtDiv,clearAll,itemUls)
                 insides.append(allDiv)
             })
 
@@ -387,11 +455,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const itemsPerPage = 6
             let currentPage = 1
 
-            function renderPage(pageNumber, items){
+            function renderPage(pageNumber, items) {
 
                 contents.innerHTML = ''
 
-                if(items.length === 0){
+                if (items.length === 0) {
                     const noElement = document.createElement('div')
                     noElement.className = 'no-element'
                     noElement.innerHTML = `Oops! Item Not Found
@@ -408,59 +476,59 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (let i = startIndex; i < endIndex; i++) {
                     const item = items[i];
 
-                       
-                const contPad = document.createElement('div')
-                contPad.className = 'conts-in main-pad'
-                const inConts = document.createElement('div')
-                inConts.className = 'inconts-flex cont-border'
-                contPad.append(inConts)
-    
-                contents.append(contPad)
+
+                    const contPad = document.createElement('div')
+                    contPad.className = 'conts-in main-pad'
+                    const inConts = document.createElement('div')
+                    inConts.className = 'inconts-flex cont-border'
+                    contPad.append(inConts)
+
+                    contents.append(contPad)
 
                     // mob
-                const mobSide = document.createElement('div')
-                mobSide.className = 'mob-side'
-                const mobFlex = document.createElement('div')
-                mobFlex.className = 'mob-flex'
+                    const mobSide = document.createElement('div')
+                    mobSide.className = 'mob-side'
+                    const mobFlex = document.createElement('div')
+                    mobFlex.className = 'mob-flex'
 
-                const mobImageDiv = document.createElement('a')
-                const mobImg = document.createElement('img')
-                mobImg.src = item.img
-                mobImg.className = item.imgclass
+                    const mobImageDiv = document.createElement('a')
+                    const mobImg = document.createElement('img')
+                    mobImg.src = item.img
+                    mobImg.className = item.imgclass
 
-                mobImageDiv.append(mobImg)
-                mobFlex.append(mobImageDiv)
-                mobSide.append(mobFlex)
+                    mobImageDiv.append(mobImg)
+                    mobFlex.append(mobImageDiv)
+                    mobSide.append(mobFlex)
 
                     // writes
-                const contentSide = document.createElement('div')
-                contentSide.className = 'cont-side'
-                const contMarg = document.createElement('div')
-                contMarg.className = 'cont-marg'
+                    const contentSide = document.createElement('div')
+                    contentSide.className = 'cont-side'
+                    const contMarg = document.createElement('div')
+                    contMarg.className = 'cont-marg'
 
                     // .....
-                const contentOne = document.createElement('div')
-                contentOne.className = 'content-1'
+                    const contentOne = document.createElement('div')
+                    contentOne.className = 'content-1'
 
-                const sponsered = document.createElement('div')
-                sponsered.className = 'sponsored'
-                sponsered.innerHTML = `
+                    const sponsered = document.createElement('div')
+                    sponsered.className = 'sponsored'
+                    sponsered.innerHTML = `
                 <span>${item.spons}</span>
                 <p>`
 
-                const mobName = document.createElement('div')
-                mobName.className = 'mobNames'
-                mobName.innerHTML = `<h2>${item.h2}</h2>`
+                    const mobName = document.createElement('div')
+                    mobName.className = 'mobNames'
+                    mobName.innerHTML = `<h2>${item.h2}</h2>`
 
-                contentOne.append(sponsered,mobName)
+                    contentOne.append(sponsered, mobName)
 
                     // .....
-                const contentTwo = document.createElement('div')
-                contentTwo.className = 'content-2'
+                    const contentTwo = document.createElement('div')
+                    contentTwo.className = 'content-2'
 
-                const stars = document.createElement('div')
-                stars.className = 'stars'
-                stars.innerHTML = `
+                    const stars = document.createElement('div')
+                    stars.className = 'stars'
+                    stars.innerHTML = `
                 <span class='star-1'>
                 <i class='star-rate all-stars'></i>
                 <i class='arw all-stars'></i>
@@ -468,28 +536,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <span class='star-2'><p>${item.star}</p></span>`
 
-                const bought = document.createElement('div')
-                bought.className = 'bought'
-                bought.innerHTML = `<p>${item.bought}</p>`
+                    const bought = document.createElement('div')
+                    bought.className = 'bought'
+                    bought.innerHTML = `<p>${item.bought}</p>`
 
-                contentTwo.append(stars,bought)
+                    contentTwo.append(stars, bought)
 
                     // .....
-                const contentThree = document.createElement('div')
-                contentThree.className = 'content-3 inconts-flex'
+                    const contentThree = document.createElement('div')
+                    contentThree.className = 'content-3 inconts-flex'
 
-                const threeLeft = document.createElement('div')
-                threeLeft.className = 'three-left main-pad'
+                    const threeLeft = document.createElement('div')
+                    threeLeft.className = 'three-left main-pad'
 
-                const divOne = document.createElement('div')
-                divOne.className = 'left-div-1 left-div-pad'
-                const oneSubOne = document.createElement('div')
-                oneSubOne.className = 'one-sub-1'
-                oneSubOne.innerHTML = `<span>${item.gif}</span>`
+                    const divOne = document.createElement('div')
+                    divOne.className = 'left-div-1 left-div-pad'
+                    const oneSubOne = document.createElement('div')
+                    oneSubOne.className = 'one-sub-1'
+                    oneSubOne.innerHTML = `<span>${item.gif}</span>`
 
-                const oneSubTwo = document.createElement('div')
-                oneSubTwo.className = 'one-sub-2'
-                oneSubTwo.innerHTML = `
+                    const oneSubTwo = document.createElement('div')
+                    oneSubTwo.className = 'one-sub-2'
+                    oneSubTwo.innerHTML = `
                 <div class='a-sub2'>
                 <span class='rs'>${item.rs}</span>
                 <span class='mrp'>${item.mrp}</span>
@@ -497,69 +565,69 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class='off'>${item.off}</span>
                 `
 
-                const oneSubThree = document.createElement('div')
-                oneSubThree.className = 'one-sub-3'
-                oneSubThree.innerHTML = `
+                    const oneSubThree = document.createElement('div')
+                    oneSubThree.className = 'one-sub-3'
+                    oneSubThree.innerHTML = `
                 <div class='save-coup'>
                 <span class = 'save'>${item.save}</span>
                 <span class = 'coup'>${item.coup}</span>
                 </div>`
 
-                divOne.append(oneSubOne,oneSubTwo,oneSubThree)
-                            // ===
-                const divTwo = document.createElement('div')
-                divTwo.className = 'left-div-2 left-div-pad'
+                    divOne.append(oneSubOne, oneSubTwo, oneSubThree)
+                    // ===
+                    const divTwo = document.createElement('div')
+                    divTwo.className = 'left-div-2 left-div-pad'
 
-                const twoSubOne = document.createElement('div')
-                twoSubOne.className = 'two-sub-1 two-sub'
-                twoSubOne.innerHTML = `
+                    const twoSubOne = document.createElement('div')
+                    twoSubOne.className = 'two-sub-1 two-sub'
+                    twoSubOne.innerHTML = `
                 <span>
                 <i class='bg-2'></i>
                 </span>`
 
-                const twoSubTwo = document.createElement('div')
-                twoSubTwo.className = 'two-sub-2 two-sub'
-                twoSubTwo.innerHTML = `<span class='deliver'>${item.delivery}</span>`
+                    const twoSubTwo = document.createElement('div')
+                    twoSubTwo.className = 'two-sub-2 two-sub'
+                    twoSubTwo.innerHTML = `<span class='deliver'>${item.delivery}</span>`
 
-                const twoSubThree = document.createElement('div')
-                twoSubThree.className = 'two-sub-3 two-sub'
-                twoSubThree.innerHTML = `<span class='fastest'>${item.fast}</span>`
-                          
-                divTwo.append(twoSubOne,twoSubTwo,twoSubThree)
-                            // ===
-                const divThree = document.createElement('div')
-                divThree.className = 'left-div-3 left-div-pad'
-                divThree.innerHTML = `<span class='service'>${item.service}</span>`
+                    const twoSubThree = document.createElement('div')
+                    twoSubThree.className = 'two-sub-3 two-sub'
+                    twoSubThree.innerHTML = `<span class='fastest'>${item.fast}</span>`
 
-                            // ===
-                const divFour = document.createElement('div')
-                divFour.className = 'left-div-4 left-div-pad'
-                divFour.innerHTML = `
+                    divTwo.append(twoSubOne, twoSubTwo, twoSubThree)
+                    // ===
+                    const divThree = document.createElement('div')
+                    divThree.className = 'left-div-3 left-div-pad'
+                    divThree.innerHTML = `<span class='service'>${item.service}</span>`
+
+                    // ===
+                    const divFour = document.createElement('div')
+                    divFour.className = 'left-div-4 left-div-pad'
+                    divFour.innerHTML = `
                 <span class='addcart'>
                 <button>${item.addto}</button>
                 </span>`
-                            // ===
-                const divFive = document.createElement('div')
-                divFive.className = 'left-div-5 left-div-pad'
-                divFive.innerHTML = `
+                    // ===
+                    const divFive = document.createElement('div')
+                    divFive.className = 'left-div-5 left-div-pad'
+                    divFive.innerHTML = `
                 <span class ='color'>
                 <a>${item.colors}</a>
                 </span>`
 
-                threeLeft.append(divOne,divTwo,divThree,divFour,divFive)
+                    threeLeft.append(divOne, divTwo, divThree, divFour, divFive)
 
-                const threeRight = document.createElement('div')
-                threeRight.className = 'three-right'
-                const inThreeRight = document.createElement('div')
-                inThreeRight.className = 'main-pad'
-                threeRight.append(inThreeRight)
+                    const threeRight = document.createElement('div')
+                    threeRight.className = 'three-right'
+                    const inThreeRight = document.createElement('div')
+                    inThreeRight.className = 'main-pad'
+                    threeRight.append(inThreeRight)
 
-                contentThree.append(threeLeft,threeRight)
+                    contentThree.append(threeLeft, threeRight)
                     // .....
-                contMarg.append(contentOne,contentTwo,contentThree)
-                contentSide.append(contMarg)
+                    contMarg.append(contentOne, contentTwo, contentThree)
+                    contentSide.append(contMarg)
 
-                inConts.append(mobSide, contentSide)
+                    inConts.append(mobSide, contentSide)
                 }
 
             }
@@ -567,13 +635,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // pagination
 
-            function paginationControl(totalItems){
+            function paginationControl(totalItems) {
                 const pagination = document.querySelector('.pagination')
 
                 const pageSpan = document.createElement('span')
                 pageSpan.className = 'page-span'
 
-                const totalPages = Math.ceil(totalItems/itemsPerPage)
+                const totalPages = Math.ceil(totalItems / itemsPerPage)
 
                 pagination.innerHTML = ''
 
@@ -587,32 +655,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 pageSpan.append(prevValue)
 
                 // eventlistener
-                prevValue.addEventListener('click', ()=>{
-                    if(currentPage > 1){
-                        currentPage -- 
+                prevValue.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        currentPage--
                         renderPage(currentPage, data.Phones)
                         paginationControl(data.Phones.length)
-                       
+
                         document.querySelector('.prev').classList.add('click')
                     }
 
                 })
-                
-                for(let i = 1; i <= totalPages; i++){
-                    
+
+                for (let i = 1; i <= totalPages; i++) {
+
                     const pageButton = document.createElement('button')
                     pageButton.innerHTML = `<a>${i}</a>`
-                    
+
                     pageSpan.append(pageButton)
                     pagination.append(pageSpan)
-                   
-                    if(i === currentPage){
+
+                    if (i === currentPage) {
                         pageButton.classList.add('selected')
                     }
 
-                    pageButton.addEventListener('click', ()=>{
+                    pageButton.addEventListener('click', () => {
                         currentPage = i
-                        renderPage(currentPage, data.Phones) 
+                        renderPage(currentPage, data.Phones)
 
                         document.querySelectorAll('.page-span button').forEach(btn => {
                             btn.classList.remove('selected')
@@ -621,20 +689,20 @@ document.addEventListener('DOMContentLoaded', () => {
                         pageButton.classList.add('selected')
                     })
 
-                    
+
                 }
-                
+
                 const nextValue = document.createElement('div')
                 nextValue.innerHTML = `
                 ${data.pagination.next.value}
                 <img src = "${data.pagination.next.img}">`
                 nextValue.className = data.pagination.next.class
-                
+
                 pageSpan.append(nextValue)
 
-                nextValue.addEventListener('click', ()=>{
-                    if(currentPage < totalPages){
-                        currentPage ++ 
+                nextValue.addEventListener('click', () => {
+                    if (currentPage < totalPages) {
+                        currentPage++
                         renderPage(currentPage, data.Phones)
                         paginationControl(data.Phones.length)
 
@@ -646,148 +714,239 @@ document.addEventListener('DOMContentLoaded', () => {
             paginationControl(data.Phones.length)
             renderPage(currentPage, data.Phones)
             // -------------------------------------------
-         
-        // ================ functions - filtering ====================
 
-        function filterPhonesByBrands() {
-            const brands = document.getElementById('brand')
-        
-            const checkedBrands = Array.from(brands.querySelectorAll('input:checked'))
+            // ================ functions - filtering ====================
 
-            if(checkedBrands.length === 0){
-                renderPage(1,data.Phones)
+            function filterPhonesByBrands() {
+                const brands = document.getElementById('brand')
 
-                return 
-            }
-        
-            const selectedBrands = checkedBrands.map(input => input.value.toLowerCase()) 
-        
-            const filteredPhones = data.Phones.filter(phone => 
-                selectedBrands.includes(phone.id.toLowerCase()) 
-            )
-        
-            renderPage(currentPage, filteredPhones)
-        
-            console.log('filteredphones', filteredPhones)
-        }
-        
-        const brandCheckBoxes = document.querySelectorAll('#brand input[type="checkbox"]')
-        brandCheckBoxes.forEach(checkbox => {
-            checkbox.addEventListener('change', filterPhonesByBrands)
-        })
+                const checkedBrands = Array.from(brands.querySelectorAll('input:checked'))
 
+                if (checkedBrands.length === 0) {
+                    renderPage(1, data.Phones)
 
-        // ----------------------
-
-        //  filter by ram
-
-        
-        function filterByRam(){
-            const ramRanges = {
-                "2 to 3.9 GB": { min: 2, max: 3.9 },
-                "4 to 5.9 GB": { min: 4, max: 5.9 },
-                "6 to 7.9 GB": { min: 6, max: 7.9 },
-                "8 to 9.9 GB": { min: 8, max: 9.9 },
-                "10 GB & Above": { min: 10, max: Infinity }
-            };
-            
-            const ram = document.getElementById('ram')
-            const checekdRam = Array.from(ram.querySelectorAll('input:checked'))
-                                .map(input => input.value.toLowerCase())
-
-            const filterPhones = data.Phones.filter(phone => {
-                const ramMatch = phone.h2.match(/(\d+)\s*GB/)
-
-                if(ramMatch){
-                    const ramSize = parseFloat(ramMatch[1])
-
-                    return checekdRam.some(range =>{
-                        const {min,max} = ramRanges[range] || {}
-
-                        if(min !== undefined && max !== undefined){
-                            return ramSize >= min && ramSize <= max
-                        }
-                    })
+                    return
                 }
 
-                return false
+                const selectedBrands = checkedBrands.map(input => input.value.toLowerCase())
+
+                const filteredPhones = data.Phones.filter(phone =>
+                    selectedBrands.includes(phone.id.toLowerCase())
+                )
+
+                renderPage(currentPage, filteredPhones)
+
+                console.log('filteredphones', filteredPhones)
+            }
+
+            const brandCheckBoxes = document.querySelectorAll('#brand input[type="checkbox"]')
+            brandCheckBoxes.forEach(checkbox => {
+                checkbox.addEventListener('change', filterPhonesByBrands)
             })
 
-            renderPage(1,filterPhones)
-        }
 
-        const ramCheckBoxes = document.querySelectorAll('#ram input[type="checkbox"]')
-        ramCheckBoxes.forEach(checkbox => {
-            checkbox.addEventListener('change', filterByRam)
-        })
+            // ----------------------
+
+            //  filter by ram
 
 
-        // filter by memory storage
+            function filterByRam() {
+                const ramRanges = {
+                    "2 to 3.9 GB": { min: 2, max: 3.9 },
+                    "4 to 5.9 GB": { min: 4, max: 5.9 },
+                    "6 to 7.9 GB": { min: 6, max: 7.9 },
+                    "8 to 9.9 GB": { min: 8, max: 9.9 },
+                    "10 GB & Above": { min: 10, max: Infinity }
+                };
 
-        function filterByStorage(){
-            const storage = document.getElementById('storage')
-            const checkedStorage = Array.from(storage.querySelectorAll('input:checked'))
-                                    .map(input => input.value.toLowerCase().trim().replace(/\s+/g, ''))
-                                
-            console.log('checked storage', checkedStorage)
+                const ram = document.getElementById('ram')
+                const checekdRam = Array.from(ram.querySelectorAll('input:checked'))
+                    .map(input => input.value.toLowerCase())
 
-            if(checkedStorage.length === 0){
-                renderPage(1,data.Phones)
+                const filterPhones = data.Phones.filter(phone => {
+                    const ramMatch = phone.h2.match(/(\d+)\s*GB/)
 
-                return 
-            }
-                
-           const filteredPhones = data.Phones.filter(phone => {
+                    if (ramMatch) {
+                        const ramSize = parseFloat(ramMatch[1])
 
-            if(!phone.h2 || typeof phone.h2 !== 'string' || phone.h2.trim() === ""){
-                console.warn('missing h2 for phone', phone)
-                return false
-            }
+                        return checekdRam.some(range => {
+                            const { min, max } = ramRanges[range] || {}
 
-            const h2Text = phone.h2.toLowerCase()
-            console.log('h2text:', h2Text)
-            
-            const storageMatch = h2Text.match(/(\d+\.?\d*)\s*gb\s*(storage|rom)/i)
-
-            if(storageMatch){
-                // const phoneStorage = storageMatch[0].toLowerCase().trim()
-                // const phoneStorage = `${parseInt(storageMatch[1])}gb`
-
-                const phoneStorage = parseInt(storageMatch[1])
-
-                return checkedStorage.some(option =>{
-                    if(option === '512gb&above'){
-                        return phoneStorage >= 512
-
-                    } else if(option === 'upto3.9gb'){
-                        return phoneStorage <= 3 
-
-                    } else {
-                        return option === `${phoneStorage}gb`
+                            if (min !== undefined && max !== undefined) {
+                                return ramSize >= min && ramSize <= max
+                            }
+                        })
                     }
+
+                    return false
                 })
 
-                // return checkedStorage.includes(phoneStorage)
+                renderPage(1, filterPhones)
             }
-  
-            return false 
 
-           })
+            const ramCheckBoxes = document.querySelectorAll('#ram input[type="checkbox"]')
+            ramCheckBoxes.forEach(checkbox => {
+                checkbox.addEventListener('change', filterByRam)
+            })
 
-           console.log('filterd phones', filteredPhones)
 
-            renderPage(1,filteredPhones)
-        }
+            // filter by memory storage
 
-        const storages = document.querySelectorAll('#storage input[type="checkbox"]')
-        storages.forEach(store =>{
-            store.addEventListener('change', filterByStorage)
-        })
+            function filterByStorage() {
+                const storage = document.getElementById('storage')
+                const checkedStorage = Array.from(storage.querySelectorAll('input:checked'))
+                    .map(input => input.value.toLowerCase().trim().replace(/\s+/g, ''))
 
-        // -------------------------------------------
+                console.log('checked storage', checkedStorage)
 
-        // 
-          
+                if (checkedStorage.length === 0) {
+                    renderPage(1, data.Phones)
+
+                    return
+                }
+
+                const filteredPhones = data.Phones.filter(phone => {
+
+                    if (!phone.h2 || typeof phone.h2 !== 'string' || phone.h2.trim() === "") {
+                        console.warn('missing h2 for phone', phone)
+                        return false
+                    }
+
+                    const h2Text = phone.h2.toLowerCase()
+                    console.log('h2text:', h2Text)
+
+                    const storageMatch = h2Text.match(/(\d+\.?\d*)\s*gb\s*(storage|rom)/i)
+
+                    if (storageMatch) {
+                        // const phoneStorage = storageMatch[0].toLowerCase().trim()
+                        // const phoneStorage = `${parseInt(storageMatch[1])}gb`
+
+                        const phoneStorage = parseInt(storageMatch[1])
+
+                        return checkedStorage.some(option => {
+                            if (option === '512gb&above') {
+                                return phoneStorage >= 512
+
+                            } else if (option === 'upto3.9gb') {
+                                return phoneStorage <= 3
+
+                            } else {
+                                return option === `${phoneStorage}gb`
+                            }
+                        })
+
+                        // return checkedStorage.includes(phoneStorage)
+                    }
+
+                    return false
+
+                })
+
+                console.log('filterd phones', filteredPhones)
+
+                renderPage(1, filteredPhones)
+            }
+
+            const storages = document.querySelectorAll('#storage input[type="checkbox"]')
+            storages.forEach(store => {
+                store.addEventListener('change', filterByStorage)
+            })
+
+            // -------------------------------------------
+
+            // price low to high
+
+            const lowToHigh = document.querySelector('.form-uls .low')
+            lowToHigh.addEventListener('click', ()=>{
+
+                const lowItem = [...data.Phones]
+
+                const sortedItems = lowItem.sort((high,low) =>{
+                    const priceA = parseFloat(high.rs.replace(/[₹,]/g, '').trim())
+                    const priceB = parseFloat(low.rs.replace(/[₹,]/g, '').trim())
+
+                    return priceA - priceB
+
+                })
+                console.log('sorted-items:',sortedItems)
+
+                renderPage(1,sortedItems)
+            })
+
+
+            // price high to low
+
+            const highToLow = document.querySelector('.form-uls .high')
+            highToLow.addEventListener('click', ()=>{
+
+                const highItems = [...data.Phones]
+
+                const sortedItems = highItems.sort((low,high) =>{
+                    const priceA = parseFloat(low.rs.replace(/[₹,]/g, '').trim())
+                    const priceB = parseFloat(high.rs.replace(/[₹,]/g, '').trim())
+
+                    return priceB - priceA
+                })
+                console.log('sorteditem',sortedItems)
+                renderPage(1, sortedItems)
+            })
+
+            // featured
+            const featuredOnes = document.querySelector('.form-uls .feat')
+            featuredOnes.addEventListener('click', () => {
+                paginationControl(data.Phones.length)
+                renderPage(currentPage, data.Phones)
+            })
+
+            // avg review
+            
+            const avgReview = document.querySelector('.form-uls .avg')
+            avgReview.addEventListener('click', () =>{
+                
+                const avgItems = [...data.Phones]
+
+                console.log(avgItems.map(phone => phone.star))
+
+                const sortedItems = avgItems.sort((a,b) =>{
+                    const starA =  parseFloat(a.star.replace(/[, ]/, '').trim())
+                    const starB =  parseFloat(b.star.replace(/[, ]/, '').trim())
+
+                    return starB - starA
+                })
+                console.log('sorted items', sortedItems)
+                renderPage(currentPage,sortedItems)
+            })
+
+            // 2g-4g-5g
+
+            function filterByGen(){
+
+                const Techs = document.getElementById('tech')
+                const generations = Array.from(Techs.querySelectorAll('input:checked'))
+
+                const selectedGen = generations.map(input => input.value.toLowerCase())
+
+                const filteredPhones = data.Phones.filter(phone =>{
+                    return  selectedGen.some(gen => {
+                        const regex = new RegExp(`\\b${gen}\\b`, 'i'); // \b asserts a word boundary
+                        return regex.test(phone.h2.toLowerCase())
+                    })
+                })
+
+                renderPage(1, filteredPhones)
+                console.log('filteredphones', filteredPhones)
+            }
+             const genCheckBoxes = document.querySelectorAll('#tech input')
+             genCheckBoxes.forEach(gen =>{
+                gen.addEventListener('change', filterByGen)
+            })
+
+            // -------
+
+            // clear fn
+       
+            
+
             // -------------------------------------------
 
         })

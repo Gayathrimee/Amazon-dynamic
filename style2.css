@@ -463,11 +463,17 @@
 .top-right .top-pad{
     text-align: right;
     padding-right: 1px;
-    position: relative;
+    /* position: relative; */
 }
 .top-right form{
     display: inline-block;
     position: relative;
+}
+.top-right form.border .in-form{
+    border: 3px solid rgb(0, 113, 133);
+}
+.top-right form.drop .form-uls{
+    display: block;
 }
 .top-right form .in-form{
     background-color: #f0f2f2;
@@ -509,8 +515,6 @@
 }
 .top-pad form .form-uls{
     position: absolute;
-    align-items: flex-start;
-    display: flex;
     border: 1px solid #bbbfbf;
     height: 100%;
     width: 100%;
@@ -519,10 +523,14 @@
     background-color: #fff;
     min-height: min-content;
     overflow-y: auto;
-    min-width: 119px;
+    min-width: max-content;
     padding: 8px 0;
     text-align: left;
     overflow-x: hidden;
+    top: 0px;
+    right: 0;
+    z-index: 10;
+    display: none;
 }
 .top-pad form .form-uls ul{
     display: flex;
@@ -531,7 +539,7 @@
     background-color: #fff;
     margin: -2px 0 0;
     position: relative;
-    left: -1px;
+    /* left: -1px; */
 }
 .top-pad form .form-uls ul li{
     text-align: left;
@@ -546,8 +554,14 @@
     display: block;
     white-space: nowrap;
     outline: 0;
+    cursor: pointer;
     border: 1px solid transparent;
     margin-left: 1px;
+}
+.top-pad form .form-uls ul li.active{
+    border: 2px solid rgb(0, 113, 133);
+    border-left-width: 4px;
+    background:rgba(0, 113, 133,0.1);
 }
 .main-body{
     max-width: 1800px;
@@ -598,6 +612,13 @@
 }
 .all-div ul li{
     margin-bottom: 4px;
+}
+.all-div .clear{
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    display: none;
 }
 .contents .conts-in{
     margin-bottom: 8px;
@@ -767,15 +788,18 @@
 }
 .one-sub-2 .a-sub2{
     width: 100%;
-}
+    display: flex;
+    flex-wrap: wrap;
+}                           
 .one-sub-2 .a-sub2 .rs{
     font-size: 28px;
 }
 .one-sub-2 .a-sub2 .mrp{
     display: inline-flex;
     font-size: 14px;
-    align-items: center;
-}
+    align-items: center;                    
+    flex-wrap: wrap;
+}       
 .one-sub-2 .a-sub2 .mrp p{
     font-size: 13px;
     text-decoration: line-through;

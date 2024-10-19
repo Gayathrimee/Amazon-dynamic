@@ -1,694 +1,1051 @@
 {
-    "navBar":[
+    "navBar": [
         {
-            "bgImage":"images/new-nav-sprite-global-2x_blueheaven-privacy._CB600086755_.png",
-            "in":".in",
-            "sign":"Sign in ›",
-            "deleivery":"Delivering to Delhi 110001 - Update location ⌵"
+            "bgImage": "images/new-nav-sprite-global-2x_blueheaven-privacy._CB600086755_.png",
+            "in": ".in",
+            "sign": "Sign in ›",
+            "deleivery": "Delivering to Delhi 110001 - Update location ⌵"
         }
     ],
-    "divone":[
+    "divone": [
         {
-            "filter":"Filters",
-            "uls":[
-                "Xiaomi", "Exchange","Google","Projector","Gadgets","Gimbal",
-                "Controller","Watch","Fan","Cleaner","Musical","Stickers"
+            "filter": "Filters",
+            "uls": [
+                "Xiaomi",
+                "Exchange",
+                "Google",
+                "Projector",
+                "Gadgets",
+                "Gimbal",
+                "Controller",
+                "Watch",
+                "Fan",
+                "Cleaner",
+                "Musical",
+                "Stickers"
             ]
         }
     ],
-    "navbarTwoTop":[
+    "navbarTwoTop": [
         {
-            "delivery":"Delivering to Delhi 110001 ",
-            "p":"Update location",
-            "in":".in",
-            "alltxt":"All",
-            "all":["All Categories", "Alexa Skills", "Amazon Devices","Amazon Fashion","Amazon Fresh", "Amazon Fresh Meat",
-                    "Amazon Pharmacy","Baby","Beauty","Books","Car & MotorBike","Clothing & Accessories","Deals","Electronics","Furniture"],
-            "en":"EN",
-            "p1":"Hello, sign in",
-            "span1":"Account & Lists <p></p>",
-            "p2":"Returns",
-            "span2":"& Orders",
-            "value":"Mobiles",
-            "placeholder":"Search Amazon.in",
-            "cart":"Cart"
+            "delivery": "Delivering to Delhi 110001 ",
+            "p": "Update location",
+            "in": ".in",
+            "alltxt": "All",
+            "all": [
+                "All Categories",
+                "Alexa Skills",
+                "Amazon Devices",
+                "Amazon Fashion",
+                "Amazon Fresh",
+                "Amazon Fresh Meat",
+                "Amazon Pharmacy",
+                "Baby",
+                "Beauty",
+                "Books",
+                "Car & MotorBike",
+                "Clothing & Accessories",
+                "Deals",
+                "Electronics",
+                "Furniture"
+            ],
+            "en": "EN",
+            "p1": "Hello, sign in",
+            "span1": "Account & Lists <p></p>",
+            "p2": "Returns",
+            "span2": "& Orders",
+            "value": "Mobiles",
+            "placeholder": "Search Amazon.in",
+            "cart": "Cart"
         }
     ],
-    "navbarTwoBotm":[
+    "navbarTwoBotm": [
         {
-            "all":"All",
-            "fresh":"Fresh",
-            "uls":["Fresh","MX Player","Sell","Best Sellers","Today's Deals","Mobiles"],
-            "img":"images/gif-J24_P2_SWM_ShopNow._CB544503925_.jpg"
+            "all": "All",
+            "fresh": "Fresh",
+            "uls": [
+                "Fresh",
+                "MX Player",
+                "Sell",
+                "Best Sellers",
+                "Today's Deals",
+                "Mobiles"
+            ],
+            "img": "images/gif-J24_P2_SWM_ShopNow._CB544503925_.jpg"
         }
     ],
-    "top":[
+    "top": [
         {
-            "result":"1-16 of over 2,000 results for ",
-            "mob":"\"mobile\"",
-            "sort":"Sort by:",
-            "feat":"Featured",
-            "features":["Featured","Price: Low to High","Price: High to Low",
-                        "Avg. Customer Review","Newest Arrivals","Best Sellers"]
+            "result": "1-16 of over 2,000 results for ",
+            "mob": "\"mobile\"",
+            "sort": "Sort by:",
+            "feat": "Featured",
+            "features": [
+                "Featured",
+                "Price: Low to High",
+                "Price: High to Low",
+                "Avg. Customer Review",
+                "Newest Arrivals",
+                "Best Sellers"
+            ],
+            "classes": [
+                "feat",
+                "low",
+                "high",
+                "avg",
+                "new",
+                "best"
+            ]
         }
     ],
-    "sidebar":[
+    "sidebar": [
         {
-            "txt":"Deals & Discounts",
-            "class":"txt-div",
-            "uls":["All Discounts","Today's Deals"],
-            "id":"deals"
+            "txt": "Deals & Discounts",
+            "class": "txt-div",
+            "uls": [
+                "All Discounts",
+                "Today's Deals"
+            ],
+            "id": "deals"
         },
         {
-            "txt":"Delivery Day",
-            "class":"txt-div",
-            "uls":["Get it Today","Get it by Tomorrow","Get it in 2 Days"],
-            "id":"delivery"
+            "txt": "Delivery Day",
+            "class": "txt-div",
+            "uls": [
+                "Get it Today",
+                "Get it by Tomorrow",
+                "Get it in 2 Days"
+            ],
+            "id": "delivery"
         },
         {
-            "txt":"Mobile Phone Installed RAM Size",
-            "class":"txt-div",
-            "uls":["2 to 3.9 GB","4 to 5.9 GB","6 to 7.9 GB","8 to 9.9 GB","10 GB & Above"],
-            "id":"ram"
+            "txt": "Mobile Phone Installed RAM Size",
+            "class": "txt-div",
+            "uls": [
+                "2 to 3.9 GB",
+                "4 to 5.9 GB",
+                "6 to 7.9 GB",
+                "8 to 9.9 GB",
+                "10 GB & Above"
+            ],
+            "id": "ram"
         },
         {
-            "txt":"Cellular Phone Memory Storage Capacity",
-            "class":"txt-div",
-            "uls":["Up to 3.9 GB","4 GB","8 GB","16 GB","32 GB", "64 GB","128 GB","256 GB","512 GB & above"],
-            "id":"storage"
+            "txt": "Cellular Phone Memory Storage Capacity",
+            "class": "txt-div",
+            "uls": [
+                "Up to 3.9 GB",
+                "4 GB",
+                "8 GB",
+                "16 GB",
+                "32 GB",
+                "64 GB",
+                "128 GB",
+                "256 GB",
+                "512 GB & above"
+            ],
+            "id": "storage"
         },
         {
-            "name":"price",
-            "class":"txt-div",
-            "price":"₹125 - ₹127,400+",
-            "go":"Go",
-            "id":"price"
+            "name": "price",
+            "class": "txt-div",
+            "price": "₹125 - ₹127,400+",
+            "go": "Go",
+            "id": "price"
         },
         {
-            "txt":"Brands",
-            "class":"txt-div",
-            "uls":["Samsung","realme","Redmi","POCO","OnePlus","Apple","iQOO"],
-            "id":"brand"
+            "txt": "Brands",
+            "class": "txt-div",
+            "uls": [
+                "Samsung",
+                "realme",
+                "Redmi",
+                "POCO",
+                "OnePlus",
+                "Apple",
+                "iQOO"
+            ],
+            "id": "brand"
         },
         {
-            "txt":"Cellular Technology",
-            "class":"txt-div",
-            "uls":["2G","4G","5G"],
-            "id":"tech"
+            "txt": "Cellular Technology",
+            "class": "txt-div",
+            "uls": [
+                "2G",
+                "4G",
+                "5G"
+            ],
+            "id": "tech"
         },
         {
-            "txt":"",
-            "class":"txt-div",
-            "uls":["","","","","","","","",""],
-            "id":""
+            "txt": "Discount",
+            "class": "txt-div",
+            "uls": [
+                " 10% Discount",
+                " 25% Discount",
+                " 35% Discount",
+                " 50% Discount",
+                " 60% Discount",
+                " 70% Discount",
+                "10% Discount"
+            ],
+            "id": "disc"
         },
         {
-            "txt":"",
-            "class":"txt-div",
-            "uls":["","","","","","","","",""],
-            "id":""
+            "txt": "Item Condtion",
+            "class": "txt-div",
+            "uls": [
+                " New",
+                " Renewed"
+            ],
+            "id": "item"
         },
         {
-            "txt":"",
-            "class":"txt-div",
-            "uls":["","","","","","","","",""],
-            "id":""
+            "txt": "Screen Size",
+            "class": "txt-div",
+            "uls": [
+                " Up to 3.9 in",
+                "5.5 in & above"
+            ],
+            "id": "size"
         }
     ],
+    "Phones": [
+        {
+            "id": "samsung",
+            "img": "https://m.media-amazon.com/images/I/81weRj535kL._AC_UY545_FMwebp_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Samsung Galaxy M05 (Mint Green, 4 GB RAM, 64 GB Storage) | 50 MP Dual Camera | Bigger 6.7\" HD+ Display | 5000 mAh Battery | 25W Fast Charging | 2 Gen OS Upgrade",
+            "star": "279",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹7,498",
+            "mrp": "M.R.P : <p>₹8,999",
+            "off": "(17% off)",
+            "save": "Save ₹1,000",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "samsung"
+        },
+        {
+            "id": "redmi",
+            "img": "https://m.media-amazon.com/images/I/71C8O0yT7hL._AC_UY327_FMwebp_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Redmi Note 13 Pro+ (Fusion White, 8 GB RAM, 256GB Storage) | World's First Mediatek 7200 Ultra 5G | 200MP Hi-Res Camera | 1.5K Curved AMOLED | 120W HyperCharge",
+            "star": "749",
+            "bought": "200k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹27,999",
+            "mrp": "M.R.P: ₹33,999",
+            "off": "(18% off)",
+            "save": "save ₹1,200",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        },
+        {
+            "id": "realme",
+            "img": "https://m.media-amazon.com/images/I/71r0Ysx+oVL._AC_UY218_.jpg",
+            "spons": "Sponsored",
+            "h2": "realme NARZO N61 (Voyage Blue,6 GB RAM+128GB Storage) 90Hz Eye Comfort Display | IP54 Dust & Water Resistance | 48-Month Fluency | Charger in The Box",
+            "star": "539",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹8,498",
+            "mrp": "M.R.P: ₹10,999",
+            "off": "(23% off)",
+            "save": "save ₹750",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        },
+        {
+            "id": "vivo",
+            "img": "https://m.media-amazon.com/images/I/61slrN5n-FL._AC_SX296_SY426_FMwebp_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "vivo Y18i (Space Black, 4 GB RAM, 64GB Storage) with No Cost EMI/Additional Exchange Offers |Without Charger",
+            "star": "526",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹7,999",
+            "mrp": "M.R.P: ₹11,999",
+            "off": "(33% off)",
+            "save": "save ₹300",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        },
+        {
+            "id": "itel",
+            "img": "https://m.media-amazon.com/images/I/31YBvBwHKBL._AC_UY218_.jpg",
+            "spons": "Sponsored",
+            "h2": "(Refurbished) itel MagicX Play 4G, 4G Volte Enabled, 48 MB RAM | 128 MB ROM 4.57 cm 1900 mAh Battery Light Green",
+            "star": "",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹1,359",
+            "mrp": "M.R.P: ₹1,74",
+            "off": "(14% off)",
+            "save": "save ₹20",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "itel"
+        },
+        {
+            "id": "samsung",
+            "img": "https://m.media-amazon.com/images/I/71goZuIha-L._AC_SX296_SY426_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Samsung Galaxy S23 Ultra 5G AI Smartphone (Green, 12 GB, 256 GB Storage)",
+            "star": "",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹75,999",
+            "mrp": "M.R.P: ₹1,499,999",
+            "off": "(49% off)",
+            "save": "save ₹30,000",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        },
+        {
+            "id": "poco",
+            "img": "https://m.media-amazon.com/images/I/71b0T9mkV3L._AC_UY327_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "POCO M6 5G (Galactic Black,6 GB RAM, 128 GB Storage) | MediaTek Dimensity 6100+ 5G Processor | 5000 mAh Battery + 18W Fast Charging | 50 MP AI Dual-Camera System & Side Fingerprint Sensor",
+            "star": "1,943",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹7,498",
+            "mrp": "M.R.P: ₹8,999",
+            "off": "(17% off)",
+            "save": "save ₹1,000",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "poco"
+        },
+        {
+            "id": "iq00",
+            "img": "https://m.media-amazon.com/images/I/61sY8BGOyEL._AC_UY327_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "iQOO Z9x 5G (Storm Grey, 4 GB RAM, 128 GB Storage) | Snapdragon 6 Gen 1 with 560k+ AnTuTu Score | 6000mAh Battery with 7.99mm Slim Design | 44W FlashCharge",
+            "star": "3,826",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹12,499",
+            "mrp": "M.R.P: ₹17,999",
+            "off": "(31% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        },
+        {
+            "id": "samsung",
+            "img": "https://m.media-amazon.com/images/I/81weRj535kL._AC_UY545_FMwebp_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Samsung Galaxy M05 (Mint Green, 4 GB RAM, 64 GB Storage) | 50 MP Dual Camera | Bigger 6.7\" HD+ Display | 5000 mAh Battery | 25W Fast Charging | 2 Gen OS Upgrade",
+            "star": "279",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹7,498",
+            "mrp": "M.R.P : <p>₹8,999",
+            "off": "(17% off)",
+            "save": "Save ₹1,000",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        },
+        {
+            "id": "redmi",
+            "img": "https://m.media-amazon.com/images/I/71C8O0yT7hL._AC_UY327_FMwebp_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Redmi Note 13 Pro+ (Fusion White, 8 GB RAM, 256 GB Storage) | World's First Mediatek 7200 Ultra 5G | 200MP Hi-Res Camera | 1.5K Curved AMOLED | 120W HyperCharge",
+            "star": "749",
+            "bought": "200k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹27,999",
+            "mrp": "M.R.P: ₹33,999",
+            "off": "(18% off)",
+            "save": "save ₹1,200",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        },
+        {
+            "id": "realme",
+            "img": "https://m.media-amazon.com/images/I/71r0Ysx+oVL._AC_UY218_.jpg",
+            "spons": "Sponsored",
+            "h2": "realme NARZO N61 (Voyage Blue,6 GB RAM+128 GB Storage) 90Hz Eye Comfort Display | IP54 Dust & Water Resistance | 48-Month Fluency | Charger in The Box",
+            "star": "539",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹8,498",
+            "mrp": "M.R.P: ₹10,999",
+            "off": "(23% off)",
+            "save": "save ₹750",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        },
+        {
+            "id": "vivo",
+            "img": "https://m.media-amazon.com/images/I/61slrN5n-FL._AC_SX296_SY426_FMwebp_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "vivo Y18i (Space Black, 4 GB RAM, 64 GB Storage) with No Cost EMI/Additional Exchange Offers |Without Charger",
+            "star": "526",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹7,999",
+            "mrp": "M.R.P: ₹11,999",
+            "off": "(33% off)",
+            "save": "save ₹300",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "vivo"
+        },
+        {
+            "id": "itel",
+            "img": "https://m.media-amazon.com/images/I/31YBvBwHKBL._AC_UY218_.jpg",
+            "spons": "Sponsored",
+            "h2": "(Refurbished) itel MagicX Play 4G, 4G Volte Enabled, 48 MB RAM | 128 MB ROM 4.57 cm 1900 mAh Battery Light Green",
+            "star": "",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹1,359",
+            "mrp": "M.R.P: ₹1,74",
+            "off": "(14% off)",
+            "save": "save ₹20",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "itel"
+        },
+        {
+            "id": "samsung",
+            "img": "https://m.media-amazon.com/images/I/71goZuIha-L._AC_SX296_SY426_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Samsung Galaxy S23 Ultra 5G AI Smartphone (Green, 12 GB, 256 GB Storage)",
+            "star": "",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹75,999",
+            "mrp": "M.R.P: ₹1,499,999",
+            "off": "(49% off)",
+            "save": "save ₹30,000",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "samsung"
+        },
+        {
+            "id": "poco",
+            "img": "https://m.media-amazon.com/images/I/71b0T9mkV3L._AC_UY327_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "POCO M6 5G (Galactic Black,6 GB RAM, 128 GB Storage) | MediaTek Dimensity 6100+ 5G Processor | 5000 mAh Battery + 18W Fast Charging | 50 MP AI Dual-Camera System & Side Fingerprint Sensor",
+            "star": "1,943",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹7,498",
+            "mrp": "M.R.P: ₹8,999",
+            "off": "(17% off)",
+            "save": "save ₹1,000",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "poco"
+        },
+        {
+            "id": "iq00",
+            "img": "https://m.media-amazon.com/images/I/61sY8BGOyEL._AC_UY327_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "iQOO Z9x 5G (Storm Grey, 4 GB RAM, 128 GB Storage) | Snapdragon 6 Gen 1 with 560k+ AnTuTu Score | 6000mAh Battery with 7.99mm Slim Design | 44W FlashCharge",
+            "star": "3,826",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹12,499",
+            "mrp": "M.R.P: ₹17,999",
+            "off": "(31% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "iq00"
+        },
+        {
+            "id": "poco",
+            "img": "https://m.media-amazon.com/images/I/51PQfSwIqyL._AC_UY218_.jpg",
+            "spons": "Sponsored",
+            "h2": "POCO C65 (Matte Black 4GB RAM 128GB Storage)",
+            "star": "2627",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹6,999",
+            "mrp": "M.R.P: ₹10,999",
+            "off": "(36% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "poco"
+        },
+        {
+            "id": "realme",
+            "img": "https://m.media-amazon.com/images/I/71Hu8jXCZLL._AC_UY327_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "realme C67 5G (Dark Purple, 128 GB) (4 GB RAM)",
+            "star": "63",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹10,699",
+            "mrp": "M.R.P: ₹16,699",
+            "off": "(37% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "iq00"
+        },
+        {
+            "id": "infinity",
+            "img": "https://m.media-amazon.com/images/I/610sxQZ5oWL._AC_UY327_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Infinix HOT 40i (Starlit Black, 256 GB) (8 GB RAM)",
+            "star": "15",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹9,199",
+            "mrp": "M.R.P: ₹10,999",
+            "off": "(16% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "infinity"
+        },
+        {
+            "id": "vivo",
+            "img": "https://m.media-amazon.com/images/I/51dpdIhv8wL._AC_UY218_.jpg",
+            "spons": "Sponsored",
+            "h2": "Vivo V40e 5G AI Smartphone (Royal Bronze, 8GB RAM + 256GB Storage)",
+            "star": "",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹30,800",
+            "mrp": "M.R.P: ₹35,999",
+            "off": "(14% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "vivo"
+        },
+        {
+            "id": "snexian",
+            "img": "https://m.media-amazon.com/images/I/71LUa2KPW3L._AC_UY218_.jpg",
+            "spons": "Sponsored",
+            "h2": "Snexian All-New Rock FOLD Folding Design Dual Sim |Keypad Mobile| with 2.8\" Display |Magic Slate|Voice Changer|BT Dialer| Call Recording|Long Lasting Battery|FM|Camera|Feature Phone| Black+Blue",
+            "star": "1",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹2,327",
+            "mrp": "M.R.P: ₹2,999",
+            "off": "(22% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "snexian"
+        },
+        {
+            "id": "lava",
+            "img": "https://m.media-amazon.com/images/I/61QmWrNuaRL._AC_UY327_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Lava Z61E (Gold, 2GB RAM, 16GB Storage)",
+            "star": "1,277",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹5,379",
+            "mrp": "M.R.P: ₹9,890",
+            "off": "(46% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "lava"
+        },
+        {
+            "id": "shivansh",
+            "img": "https://m.media-amazon.com/images/I/21XLgsMNKeL._AC_UY218_.jpg",
+            "spons": "Sponsored",
+            "h2": "SHIVANSH Lyf Water 4 LS-5005 White 2GB RAM 16GB ROM 13MP 2920 Mah Battery",
+            "star": "",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹3,490",
+            "mrp": "M.R.P: ₹14,299",
+            "off": "(76% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        },
+        {
+            "id": "apple",
+            "img": "https://m.media-amazon.com/images/I/615O-NFQKdL._AC_UY327_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Apple iPhone 16 (128 GB) - Black",
+            "star": "",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹79,900",
+            "mrp": "M.R.P: ₹",
+            "off": "(% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "apple"
+        },
+        {
+            "id": "apple",
+            "img": "https://m.media-amazon.com/images/I/61lLjrvDEkL._AC_UY436_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Apple iPhone 16 (128 GB) - White",
+            "star": "40",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹79,900",
+            "mrp": "M.R.P: ₹",
+            "off": "(% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "apple"
+        },
+        {
+            "id": "apple",
+            "img": "https://m.media-amazon.com/images/I/81Os1SDWpcL._AC_UY327_QL65_.jpg",
+            "spons": "Sponsored",
+            "h2": "Apple iPhone 15 Pro Max (512 GB Storage) - Black Titanium",
+            "star": "357",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹1,31,900",
+            "mrp": "M.R.P: ₹1,59,900",
+            "off": "(18% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": "apple"
+        },
+        {
+            "id": "",
+            "img": "",
+            "spons": "Sponsored",
+            "h2": "",
+            "star": "",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹",
+            "mrp": "M.R.P: ₹",
+            "off": "(% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        },
+        {
+            "id": "",
+            "img": "",
+            "spons": "Sponsored",
+            "h2": "",
+            "star": "",
+            "bought": "5k+ bought in past month",
+            "gif": "Great Indian Festival",
+            "rs": "₹",
+            "mrp": "M.R.P: ₹",
+            "off": "(% off)",
+            "save": "save ₹500",
+            "coup": "with coupon",
+            "delivery": "FREE delivery <p>Fri, 18 Oct</p>",
+            "fast": "or fastest delivry <p>Tomorrow, 17 Oct</p>",
+            "service": "Service: Installation",
+            "addto": "Add to Cart",
+            "colors": "+2 colors/patterns",
+            "imgclass": ""
+        }
+    ],
+    "pagination": {
+        "prev": {
+            "value": "Previous",
+            "class": "prev page",
+            "img": "images/www.amazon.in.svg"
+        },
+        "next": {
+            "value": "Next",
+            "class": "next page",
+            "img": "images/www.amazon.in (1).svg"
+        }
+    },
+    "filterbody": [
+        {
+            "filter": "Filters",
+            "close": "Close",
+            "contents":[
+                  {
+                    "h2":"Primary & Delivery",
+                    "h3":"Primary & Delivery",
+                    "subs":[
+                        {
+                            "h4": "Delivery",
+                            "span": ["Get It Today","Get It by Tomorrow","Get It In 2 Days"]
+                        },{
+                            "h4": "Shipping Options",
+                            "span": [
+                                "Eligible for Pay On Delivery"
+                            ]
+                        },
+                        {
+                            "h4": "Prime Programs",
+                            "span": []
+                        },
+                        {
+                            "h4": "Seller",
+                            "span": ["Clicktech Retail Private Ltd","OldSold in","Darshita Mobiles","STPL Exclusive Online","SelTrue","Gaurav Trader's Sales","Elecronic hubb"]
+                        }
+                    ]
+                  },
+                  {
+                    "h2":"Mobile Phone Installed RAM Size",
+                    "h3":"Smartphones & Basic Mobiles",
+                    "subs":[
+                        {
+                            "h4": "Mobile Phone Installed RAM Size",
+                            "span": ["2 to 3.8 GB", "4 to 5.9 GB","6 to 7.9 GB","8 to 9.9 GB","10 GB & Above"]
+                        }
+                    ]
+                  },
+                  {
+                    "h2":"Cellular Phone Memory Storage Capacity",
+                    "h3":"Smartphones & Basic Mobiles",
+                    "subs":[
+                        {
+                            "h4": "Cellular Phone Memory Storage Capacity",
+                            "span": ["Upto 3.9 GB","4 GB","8 GB","16 GB","32 GB","64 GB","256 GB","512 GB & above"]
+                        }
+                    ]
+                  },
+                  {
+                    "h2":"Price and Deals",
+                    "h3":"Price and Deals",
+                    "subs":[
+                        {
+                            "h4": "Price",
+                            "span": ["All Prices","Under ₹1,000","₹1,000 - ₹5,000","₹5,000 - ₹10,000","₹10,000 - ₹20,000","Over ₹20,000"]
+                        },{
+                            "h4": "Discount",
+                            "span": ["10% Off or more","25% Off or more","35% Off or more","50% Off or more","60% Off or more","70% Off or more"]
+                        },
+                        {
+                            "h4": "Deals & Discounts",
+                            "span": ["All Discounts","Today's Deals"]
+                        }
+                    ]
+                  },{
+                    "h2":"Brands",
+                    "h3":"Brands",
+                    "subs":[
+                        {
+                            "h4":"A - F",
+                            "span":["Apple","CMF BY NOTHING"]
+                        }, {
+                            "h4":"G - M",
+                            "span":["Honor","iQOO","Itel","Lava","MI","Motorola"]
+                        }, {
+                            "h4":"N - Z",
+                            "span":["Nillkin","Nothing","OnePlus","Oppo","POCO","realme","Redmi","Samsung","Tecno","Vivo","Xiaomi"]
+                        }
+                    ]
+                  },{
+                    "h2":"Cellular Technology",
+                    "h3":"Smartphones & Basic Mobiles",
+                    "subs":[
+                        {
+                            "h4":"Cellular Technology",
+                            "span":["2G","4G","5G"]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  },{
+                    "h2":"",
+                    "h3":"",
+                    "subs":[
+                        {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }, {
+                            "h4":"",
+                            "span":["","","","","","","",""]
+                        }
+                    ]
+                  }
 
-    "Phones":[
-        {
-            "id":"samsung",
-            "img":"https://m.media-amazon.com/images/I/81weRj535kL._AC_UY545_FMwebp_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Samsung Galaxy M05 (Mint Green, 4 GB RAM, 64 GB Storage) | 50 MP Dual Camera | Bigger 6.7\" HD+ Display | 5000 mAh Battery | 25W Fast Charging | 2 Gen OS Upgrade",
-            "star":"279",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹7,498",
-            "mrp":"M.R.P : <p>₹8,999",
-            "off":"(17% off)",
-            "save":"Save ₹1,000",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"samsung"
-        },
-        {
-            "id":"redmi",
-            "img":"https://m.media-amazon.com/images/I/71C8O0yT7hL._AC_UY327_FMwebp_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Redmi Note 13 Pro+ (Fusion White, 8 GB RAM, 256GB Storage) | World's First Mediatek 7200 Ultra 5G | 200MP Hi-Res Camera | 1.5K Curved AMOLED | 120W HyperCharge",
-            "star":"749",
-            "bought":"200k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹27,999",
-            "mrp":"M.R.P: ₹33,999",
-            "off":"(18% off)",
-            "save":"save ₹1,200",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
 
-        },
-        {
-            "id":"realme",
-            "img":"https://m.media-amazon.com/images/I/71r0Ysx+oVL._AC_UY218_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"realme NARZO N61 (Voyage Blue,6 GB RAM+128GB Storage) 90Hz Eye Comfort Display | IP54 Dust & Water Resistance | 48-Month Fluency | Charger in The Box",
-            "star":"539",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹8,498",
-            "mrp":"M.R.P: ₹10,999",
-            "off":"(23% off)",
-            "save":"save ₹750",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
-        },
-        {
-            "id":"vivo",
-            "img":"https://m.media-amazon.com/images/I/61slrN5n-FL._AC_SX296_SY426_FMwebp_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"vivo Y18i (Space Black, 4 GB RAM, 64GB Storage) with No Cost EMI/Additional Exchange Offers |Without Charger",
-            "star":"526",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹7,999",
-            "mrp":"M.R.P: ₹11,999",
-            "off":"(33% off)",
-            "save":"save ₹300",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
-        },
-        {
-            "id":"itel",
-            "img":"https://m.media-amazon.com/images/I/31YBvBwHKBL._AC_UY218_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"(Refurbished) itel MagicX Play 4G, 4G Volte Enabled, 48 MB RAM | 128 MB ROM 4.57 cm 1900 mAh Battery Light Green",
-            "star":"",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹1,359",
-            "mrp":"M.R.P: ₹1,74",
-            "off":"(14% off)",
-            "save":"save ₹20",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"itel"
-        },
-        {
-            "id":"samsung",
-            "img":"https://m.media-amazon.com/images/I/71goZuIha-L._AC_SX296_SY426_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Samsung Galaxy S23 Ultra 5G AI Smartphone (Green, 12 GB, 256 GB Storage)",
-            "star":"",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹75,999",
-            "mrp":"M.R.P: ₹1,499,999",
-            "off":"(49% off)",
-            "save":"save ₹30,000",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
-        },
-        {
-            "id":"poco",
-            "img":"https://m.media-amazon.com/images/I/71b0T9mkV3L._AC_UY327_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"POCO M6 5G (Galactic Black,6 GB RAM, 128 GB Storage) | MediaTek Dimensity 6100+ 5G Processor | 5000 mAh Battery + 18W Fast Charging | 50 MP AI Dual-Camera System & Side Fingerprint Sensor",
-            "star":"1,943",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹7,498",
-            "mrp":"M.R.P: ₹8,999",
-            "off":"(17% off)",
-            "save":"save ₹1,000",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"poco"
-        },
-        {
-            "id":"iq00",
-            "img":"https://m.media-amazon.com/images/I/61sY8BGOyEL._AC_UY327_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"iQOO Z9x 5G (Storm Grey, 4 GB RAM, 128 GB Storage) | Snapdragon 6 Gen 1 with 560k+ AnTuTu Score | 6000mAh Battery with 7.99mm Slim Design | 44W FlashCharge",
-            "star":"3,826",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹12,499",
-            "mrp":"M.R.P: ₹17,999",
-            "off":"(31% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
-        },
-        {
-            "id":"samsung",
-            "img":"https://m.media-amazon.com/images/I/81weRj535kL._AC_UY545_FMwebp_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Samsung Galaxy M05 (Mint Green, 4 GB RAM, 64 GB Storage) | 50 MP Dual Camera | Bigger 6.7\" HD+ Display | 5000 mAh Battery | 25W Fast Charging | 2 Gen OS Upgrade",
-            "star":"279",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹7,498",
-            "mrp":"M.R.P : <p>₹8,999",
-            "off":"(17% off)",
-            "save":"Save ₹1,000",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
-        },
-        {
-            "id":"redmi",
-            "img":"https://m.media-amazon.com/images/I/71C8O0yT7hL._AC_UY327_FMwebp_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Redmi Note 13 Pro+ (Fusion White, 8 GB RAM, 256 GB Storage) | World's First Mediatek 7200 Ultra 5G | 200MP Hi-Res Camera | 1.5K Curved AMOLED | 120W HyperCharge",
-            "star":"749",
-            "bought":"200k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹27,999",
-            "mrp":"M.R.P: ₹33,999",
-            "off":"(18% off)",
-            "save":"save ₹1,200",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
-        },
-        {
-            "id":"realme",
-            "img":"https://m.media-amazon.com/images/I/71r0Ysx+oVL._AC_UY218_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"realme NARZO N61 (Voyage Blue,6 GB RAM+128 GB Storage) 90Hz Eye Comfort Display | IP54 Dust & Water Resistance | 48-Month Fluency | Charger in The Box",
-            "star":"539",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹8,498",
-            "mrp":"M.R.P: ₹10,999",
-            "off":"(23% off)",
-            "save":"save ₹750",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
-        },
-        {
-            "id":"vivo",
-            "img":"https://m.media-amazon.com/images/I/61slrN5n-FL._AC_SX296_SY426_FMwebp_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"vivo Y18i (Space Black, 4 GB RAM, 64 GB Storage) with No Cost EMI/Additional Exchange Offers |Without Charger",
-            "star":"526",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹7,999",
-            "mrp":"M.R.P: ₹11,999",
-            "off":"(33% off)",
-            "save":"save ₹300",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"vivo"
-        },
-        {
-            "id":"itel",
-            "img":"https://m.media-amazon.com/images/I/31YBvBwHKBL._AC_UY218_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"(Refurbished) itel MagicX Play 4G, 4G Volte Enabled, 48 MB RAM | 128 MB ROM 4.57 cm 1900 mAh Battery Light Green",
-            "star":"",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹1,359",
-            "mrp":"M.R.P: ₹1,74",
-            "off":"(14% off)",
-            "save":"save ₹20",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"itel"
-        },
-        {
-            "id":"samsung",
-            "img":"https://m.media-amazon.com/images/I/71goZuIha-L._AC_SX296_SY426_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Samsung Galaxy S23 Ultra 5G AI Smartphone (Green, 12 GB, 256 GB Storage)",
-            "star":"",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹75,999",
-            "mrp":"M.R.P: ₹1,499,999",
-            "off":"(49% off)",
-            "save":"save ₹30,000",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"samsung"
-        },
-        {
-            "id":"poco",
-            "img":"https://m.media-amazon.com/images/I/71b0T9mkV3L._AC_UY327_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"POCO M6 5G (Galactic Black,6 GB RAM, 128 GB Storage) | MediaTek Dimensity 6100+ 5G Processor | 5000 mAh Battery + 18W Fast Charging | 50 MP AI Dual-Camera System & Side Fingerprint Sensor",
-            "star":"1,943",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹7,498",
-            "mrp":"M.R.P: ₹8,999",
-            "off":"(17% off)",
-            "save":"save ₹1,000",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"poco"
-        },
-        {
-            "id":"iq00",
-            "img":"https://m.media-amazon.com/images/I/61sY8BGOyEL._AC_UY327_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"iQOO Z9x 5G (Storm Grey, 4 GB RAM, 128 GB Storage) | Snapdragon 6 Gen 1 with 560k+ AnTuTu Score | 6000mAh Battery with 7.99mm Slim Design | 44W FlashCharge",
-            "star":"3,826",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹12,499",
-            "mrp":"M.R.P: ₹17,999",
-            "off":"(31% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"iq00"
-        },
-        {
-            "id":"poco",
-            "img":"https://m.media-amazon.com/images/I/51PQfSwIqyL._AC_UY218_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"POCO C65 (Matte Black 4GB RAM 128GB Storage)",
-            "star":"2627",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹6,999",
-            "mrp":"M.R.P: ₹10,999",
-            "off":"(36% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"poco"
-        },
-        {
-            "id":"realme",
-            "img":"https://m.media-amazon.com/images/I/71Hu8jXCZLL._AC_UY327_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"realme C67 5G (Dark Purple, 128 GB) (4 GB RAM)",
-            "star":"63",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹10,699",
-            "mrp":"M.R.P: ₹16,699",
-            "off":"(37% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"iq00"
-        },
-        {
-            "id":"infinity",
-            "img":"https://m.media-amazon.com/images/I/610sxQZ5oWL._AC_UY327_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Infinix HOT 40i (Starlit Black, 256 GB) (8 GB RAM)",
-            "star":"15",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹9,199",
-            "mrp":"M.R.P: ₹10,999",
-            "off":"(16% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"infinity"
-        },
-        {
-            "id":"vivo",
-            "img":"https://m.media-amazon.com/images/I/51dpdIhv8wL._AC_UY218_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Vivo V40e 5G AI Smartphone (Royal Bronze, 8GB RAM + 256GB Storage)",
-            "star":"",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹30,800",
-            "mrp":"M.R.P: ₹35,999",
-            "off":"(14% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"vivo"
-        },
-        {
-            "id":"snexian",
-            "img":"https://m.media-amazon.com/images/I/71LUa2KPW3L._AC_UY218_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Snexian All-New Rock FOLD Folding Design Dual Sim |Keypad Mobile| with 2.8\" Display |Magic Slate|Voice Changer|BT Dialer| Call Recording|Long Lasting Battery|FM|Camera|Feature Phone| Black+Blue",
-            "star":"1",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹2,327",
-            "mrp":"M.R.P: ₹2,999",
-            "off":"(22% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"snexian"
-        },
-        {
-            "id":"lava",
-            "img":"https://m.media-amazon.com/images/I/61QmWrNuaRL._AC_UY327_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Lava Z61E (Gold, 2GB RAM, 16GB Storage)",
-            "star":"1,277",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹5,379",
-            "mrp":"M.R.P: ₹9,890",
-            "off":"(46% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"lava"
-        },
-        {
-            "id":"shivansh",
-            "img":"https://m.media-amazon.com/images/I/21XLgsMNKeL._AC_UY218_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"SHIVANSH Lyf Water 4 LS-5005 White 2GB RAM 16GB ROM 13MP 2920 Mah Battery",
-            "star":"",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹3,490",
-            "mrp":"M.R.P: ₹14,299",
-            "off":"(76% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
-        },
-        {
-            "id":"apple",
-            "img":"https://m.media-amazon.com/images/I/615O-NFQKdL._AC_UY327_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Apple iPhone 16 (128 GB) - Black",
-            "star":"",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹79,900",
-            "mrp":"M.R.P: ₹",
-            "off":"(% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"apple"
-        },
-        {
-            "id":"apple",
-            "img":"https://m.media-amazon.com/images/I/61lLjrvDEkL._AC_UY436_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Apple iPhone 16 (128 GB) - White",
-            "star":"40",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹79,900",
-            "mrp":"M.R.P: ₹",
-            "off":"(% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"apple"
-        },
-        {    
-            "id":"apple",
-            "img":"https://m.media-amazon.com/images/I/81Os1SDWpcL._AC_UY327_QL65_.jpg" ,
-            "spons":"Sponsored",
-            "h2":"Apple iPhone 15 Pro Max (512 GB Storage) - Black Titanium",
-            "star":"357",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹1,31,900",
-            "mrp":"M.R.P: ₹1,59,900",
-            "off":"(18% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":"apple"
-        },
-        {
-            "id":"",
-            "img":"" ,
-            "spons":"Sponsored",
-            "h2":"",
-            "star":"",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹",
-            "mrp":"M.R.P: ₹",
-            "off":"(% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
-        },
-        {
-            "id":"",
-            "img":"" ,
-            "spons":"Sponsored",
-            "h2":"",
-            "star":"",
-            "bought":"5k+ bought in past month",
-            "gif":"Great Indian Festival",
-            "rs":"₹",
-            "mrp":"M.R.P: ₹",
-            "off":"(% off)",
-            "save":"save ₹500",
-            "coup":"with coupon",
-            "delivery":"FREE delivery <p>Fri, 18 Oct</p>",
-            "fast":"or fastest delivry <p>Tomorrow, 17 Oct</p>",
-            "service":"Service: Installation",
-            "addto":"Add to Cart",
-            "colors":"+2 colors/patterns",
-            "imgclass":""
+
+            ]
         }
-    ],
-    "pagination":{
-        "prev":{
-            "value":"Previous",
-            "class":"prev page",
-            "img":"images/www.amazon.in.svg"
-        },
-        "next":{
-            "value":"Next",
-            "class":"next page",
-            "img":"images/www.amazon.in (1).svg"
-        }
-    }
-}                
+    ]
+
+
+
+
+}
