@@ -468,6 +468,7 @@
 .top-right form{
     display: inline-block;
     position: relative;
+    cursor: pointer;
 }
 .top-right form.border .in-form{
     border: 3px solid rgb(0, 113, 133);
