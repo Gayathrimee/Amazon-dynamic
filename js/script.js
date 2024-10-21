@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 const navSign = document.createElement('div')
                 navSign.innerHTML = `<a>${item.sign}</a>`
                 const navPerson = document.createElement('a')
-                navPerson.className = 'nav-person nav-sprite'
+                navPerson.className = 'nav-person'
                 navPerson.innerHTML = '<i class="nav-icon-a11y nav-sprite"></i>'
                 const navCart = document.createElement('a')
                 navCart.className = ' nav-cart'
@@ -375,6 +375,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
                     const leftSpanDiv = document.createElement('div');
                     leftSpanDiv.className = 'left-span';
+                    leftSpanDiv.classList.add(cont.class)
                     leftSpanDiv.innerHTML = `<span>${cont.h2}</span>`;
 
                    
@@ -450,8 +451,21 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 lowerBody.append(leftDiv,rightDiv);
                 filterBody.append(lowerBody);
 
-            })
 
+                // ------
+
+                const clearFilter = document.querySelector('.clear')
+                const clearA = document.createElement('a')
+                clearA.innerHTML = `<span>${item.clear}`
+                clearFilter.appendChild(clearA)
+
+                const showFilter = document.querySelector('.show')
+                const showA = document.createElement('a')
+                showA.innerHTML = `<span>${item.result}`
+                showFilter.appendChild(showA)
+
+            })
+                                                             
 
             // event listener for filters
 
@@ -462,7 +476,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             // console.log(backgroundBlur)
 
-            const mainFilterBody = document.querySelector('.filterbody')
+            const mainFilterBody = document.querySelector('.filterDiv')
             const inBtn = document.querySelector('.inbtn-2')
 
             const toprightButton = document.querySelector('.top-right')
@@ -473,7 +487,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 mainFilterBody.classList.add('filters')
                 document.body.classList.add('no-scroll')
                 inBtn.classList.add('rotate')
-
+                                                                                           
             })
 
             window.addEventListener('click', (e)=>{
@@ -495,8 +509,137 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 inBtn.classList.remove('rotate')
 
             })
-                                         
-        renderingPage(data.Phones)
 
+
+            // =======  filtering =========
+
+            // brands
+
+            function filterbyBrands(){
+            const sectionFour = document.getElementById('right-4')
+            const spans = Array.from(sectionFour.querySelectorAll('.span-flex span'))
+
+            const selectedBrands = spans
+                                .filter(span => span.classList.contains('selected'))
+                                .map(span => span.textContent.toLowerCase().trim())
+            
+            const filteredPhones = data.Phones.filter(phone => selectedBrands.includes(phone.id.toLowerCase()))
+
+            renderingPage(filteredPhones)
+           
+        }
+
+        const flexSpans = document.querySelectorAll('#right-4 span').forEach(span =>{
+            span.addEventListener('click', ()=>{
+                span.classList.add('selected')
+                
+                filterbyBrands()
+            })
+        })
+        // ------
+
+        // storage
+
+        function filterByStorage(){
+            const storageSection = document.getElementById('right-2')
+            const checkedStorage = Array.from(storageSection.querySelectorAll('.span-flex span'))
+                    .filter(span => span.classList.contains('selected'))
+                    .map(span => span.textContent.toLowerCase().trim().replace(/\s+/g,''))
+
+            console.log('checked storage',checkedStorage)
+            
+            if(checkedStorage.length === 0){
+                renderingPage(data.Phones)
+
+                return
+            }
+
+            const filteredPhones = data.Phones.filter(phone =>{
+
+                const h2Text = phone.h2.toLowerCase()
+                console.log('h2text:',h2Text)
+
+                const storageMatch = h2Text.match(/(\d+\.?\d*)\s*gb\s*(storage|rom)/i)
+                console.log('storage match', storageMatch)
+
+                if(storageMatch){
+                    const phoneStorage = parseFloat(storageMatch[1])
+
+                    return checkedStorage.some(option =>{
+                        if(option === '512gb&above'){
+                            return phoneStorage >= 512
+                        
+                        } else if(option === 'upto3.9gb'){
+                            return phoneStorage <= 3.9
+
+                        } else{
+                            return option === `${phoneStorage}gb`
+                        }
+                    })
+                }
+                return false
+
+            })
+            console.log('filtered phones', filteredPhones)
+
+            renderingPage(filteredPhones)
+        }
+
+        const storageSpan = document.querySelectorAll('#right-2 .span-flex span').forEach(span =>{
+            span.addEventListener('click',()=>{
+                
+                span.classList.toggle('selected')
+
+                filterByStorage()
+            })
+        })
+ 
+  
+
+        // ------
+
+        
+        const spanA = document.querySelectorAll('.span-flex a')
+        spanA.forEach(a =>{   
+            a.addEventListener('click', ()=>{
+
+                const clearFilter = document.querySelector('.show-table .clear')
+                clearFilter.classList.add('clicked')
+                clearFilter.addEventListener('click', ()=>{
+                
+                    a.classList.remove('clicked')
+
+                    backgroundBlur.classList.remove('filters')
+                    mainFilterBody.classList.remove('filters')
+                    document.body.classList.remove('no-scroll')
+                    inBtn.classList.remove('rotate')
+
+                    renderingPage(data.Phones)
+                })
+               
+                a.classList.add('clicked')
+
+            })
+        })
+
+        const showFilter = document.querySelector('.show-table .show')
+        showFilter.addEventListener('click', ()=>{
+            
+            backgroundBlur.classList.remove('filters')
+                mainFilterBody.classList.remove('filters')
+                document.body.classList.remove('no-scroll')
+                inBtn.classList.remove('rotate')
+
+                // filterByStorage()
+        })
+
+
+        // sticky div
+        const stickyDiv = document.querySelector('.mobile-view .div-1')
+        // stickyDiv.style.position = 'sticky'
+
+        // ------
+        renderingPage(data.Phones)
+        // -------------------------
         })
 })   

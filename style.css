@@ -3,6 +3,10 @@
     font-family:ember-reg;
     src: url(fonts/pDxWAF1pBB0dzGB.woff2);
 }
+@font-face {
+    font-family: 'lora-italic';
+    src: url('fonts/lora-fonts/Lora-Italic-VariableFont_wght.ttf');
+}
 *{
     box-sizing: border-box;
     margin: 0;
@@ -16,6 +20,8 @@ body{
 }
 .mobile-view{
     overflow-x: hidden;
+    overflow-y: scroll;        
+    /* width: 100vw; */
 }
 .mobile-view nav{
     position: relative;
@@ -250,15 +256,16 @@ body{
     clear: both;
 }
 .main{
-    display: grid;
+    /* display: grid; */
     grid-auto-flow: dense;
-    grid-template-columns: repeat(12,1fr);
+    /* grid-template-columns: repeat(12,1fr); */
     padding-right: 4px;
     width: calc(100vw - 8px + 4px);
     margin-right: 4px;
     align-items: stretch;
     justify-content: stretch;
     box-sizing: content-box;
+    position: relative;
 }
 .main .div-1{
     margin-left: -4px;
@@ -267,9 +274,13 @@ body{
     position: sticky;
     top: 0;
     z-index: 20;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: transform 0.2s linear;
     grid-column: 1 / -1;
+    /* position: fixed; */
+    left: 0;
+    right: 0;
+    top: 0;
 }
 .div-1 .div-1-marg{
     margin-bottom: 8px;
@@ -479,33 +490,51 @@ body{
 .mobiles .inconts-flex .cont-side{
     min-width: unset;
 }
+.filterDiv{
+    position: fixed;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    transform: translateY(719px);
+    height: 719px;
+    visibility: hidden;
+    transition: all 0.2s ease-in;
+}
+.filterDiv .filter-height{
+    height: 679px;
+    max-height: 709px;
+}
 .filterbody{
     height: 100%;
     width: 100%;
     overflow-y: auto;
+    background-color: #fff;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    background-color: #fff;
     position: absolute;
-    top: 191px;
+    bottom: 0;
+    max-height: 677px;
+    margin-top: auto;
     z-index: 1000;
-    /* transform: translateY(100%); */
-    display: none;
 }
-.filterbody.filters{
-    /* transform: translateY(-100%); */
-    display: block;
+.filterDiv.filters{  
+    transition: transform 0.4s ease-in;
+    transform: translateY(0);
+    visibility: visible;
 }
 .filterbody .filt-marg{
     margin-bottom: 16px;
     height: calc(100% - 16px);
     display: flex;
+    position: relative;
 }
 .filterbody .filt-flex{
     display: flex;
     height: 100%;
     flex-direction: column;
-    /* position: absolute; */
+    position: relative;
     width: 100%;
 }
 .filterbody .upper-body{
@@ -622,6 +651,10 @@ body{
     border: 1px solid #f4f4f4;
     font-size: 14px;
 }
+.span-divs .span-flex a.clicked{
+    background-color: #e7f4f5;
+    border-color: #c7e4e8;
+}
 .back-blur{
     position: fixed;
     height: 100%;
@@ -642,4 +675,83 @@ body.no-scroll{
 }
 .inbtn-2.rotate{
     transform: rotate(180deg);
+}
+.mobile-view .two-sub-3 .fastest p{
+    min-width: 0;
+    max-width: 90px;
+}
+.show-results{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+    margin: 0;
+    height: 62px;
+    padding: 12px;
+    border-top: .1rem solid #e7e7e7;
+    border-bottom: .1rem solid #e7e7e7;
+    z-index: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.show-results .show-pad{
+    display: table;
+    height: fit-content;
+    width: 100%;
+}
+.show-pad .show-table{
+    display: table-row;
+    height: 100%;
+    width: 100%;
+}
+.show-table .table{
+    display: table-cell;
+    height: 100%;
+    width: 100%;
+}
+.show-table a{
+    display: flex;
+    width: 100%;
+    font-size: 12px;
+    border: 0.1rem solid #f1f1f1;
+    padding: 10px 12px;
+    justify-content: center;
+    align-items: center;
+}
+.show-table .clear{
+    visibility: hidden;
+}
+.show-table .clear a{
+    border-radius: 4px;
+    background-color: #fff;
+    color: #007185;
+    max-width: 98px;
+}
+.show-table .show a{
+    max-width: 129px;
+    border-radius: 8px;
+    background-color: #007185;
+    color: #fff;
+    min-width: max-content;
+    /* float: right; */
+}
+.show-table .clear.clicked{
+    visibility: visible;
+}
+
+@media (max-width:1012px){
+.div-2 .no-element{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    font-size: 20px;
+    font-family: lora-italic;
+    margin-top: 15px;
+    padding-top: 5px;
+}
+.no-element img{
+    max-width: 400px;
+}
 }

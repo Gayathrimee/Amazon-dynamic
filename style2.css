@@ -620,6 +620,9 @@
     font-weight: 700;
     display: none;
 }
+.all-div .clear.show{
+    display: block;
+}
 .contents .conts-in{
     margin-bottom: 8px;
     height: unset;
@@ -851,7 +854,7 @@
 .two-sub-3 .fastest{
     display: flex;
     min-width:max-content;
-    font-size: 15px;
+    font-size: 13px;
 }
 .two-sub-3 .fastest p{
     font-weight: 700;

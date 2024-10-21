@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const fourDiv = document.createElement('div')
                 const fourZero = document.createElement('span')
-                fourZero.textContent = ''
+                fourZero.textContent = '0'
                 const fourSpan = document.createElement('p')
                 fourSpan.className = 'four-p nav-sprite-3'
 
@@ -645,7 +645,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 pagination.innerHTML = ''
 
-
+                    
+                        // prev value
                 const prevValue = document.createElement('div')
                 prevValue.innerHTML = `
                 <img src = "${data.pagination.prev.img}">
@@ -662,10 +663,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         paginationControl(data.Phones.length)
 
                         document.querySelector('.prev').classList.add('click')
+
                     }
 
-                })
+                    if(currentPage === 1){
+                        document.querySelector('.prev').classList.remove('click')
+                    }
 
+                })            
+
+                    // ----
                 for (let i = 1; i <= totalPages; i++) {
 
                     const pageButton = document.createElement('button')
@@ -678,6 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         pageButton.classList.add('selected')
                     }
 
+                            // page button event listener
                     pageButton.addEventListener('click', () => {
                         currentPage = i
                         renderPage(currentPage, data.Phones)
@@ -687,11 +695,26 @@ document.addEventListener('DOMContentLoaded', () => {
                         })
 
                         pageButton.classList.add('selected')
-                    })
 
+                        if(currentPage === 1){
+                            document.querySelector('.prev').classList.remove('click')
+                        } else {
+                            document.querySelector('.prev').classList.add('click')
+                        }
+
+                        if(currentPage === totalPages){
+                            document.querySelector('.next').classList.remove('click')
+                        } else{
+                            document.querySelector('.next').classList.add('click')
+                        }
+                        
+                    })
+                            // ---
 
                 }
 
+                    
+                      // next value
                 const nextValue = document.createElement('div')
                 nextValue.innerHTML = `
                 ${data.pagination.next.value}
@@ -707,15 +730,26 @@ document.addEventListener('DOMContentLoaded', () => {
                         paginationControl(data.Phones.length)
 
                         document.querySelector('.next').classList.add('click')
+                    
+                    } 
+
+                    if(currentPage === totalPages){
+                        document.querySelector('.next').classList.remove('click')
+
                     }
-                })
+
+                })       
+                        // ---
             }
+            // ----------
 
             paginationControl(data.Phones.length)
             renderPage(currentPage, data.Phones)
             // -------------------------------------------
 
             // ================ functions - filtering ====================
+
+            //  filter by brands
 
             function filterPhonesByBrands() {
                 const brands = document.getElementById('brand')
@@ -945,8 +979,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // clear fn
        
-            
+            document.querySelectorAll('.all-div').forEach(div => {
+                div.querySelectorAll('li').forEach(li => {
+                    li.addEventListener('click', () => {
 
+                        const clrFn = div.querySelector('.clear');
+                        if (clrFn) {
+                            clrFn.classList.add('show');
+                        
+                        } 
+                                  
+                    });
+                });
+            });
+
+            document.querySelectorAll('.clear').forEach(clear =>{
+                clear.addEventListener('click', ()=>{
+                    document.querySelectorAll('.all-div input:checked').forEach(input =>{
+                        input.checked = false
+
+                        if(input.checked === false){
+                            clear.classList.remove('show')
+                        }
+                    })
+
+                    clear.classList.remove('show')
+                    renderPage(1,data.Phones)
+                })
+
+            })
+            // -------------------------------------------
             // -------------------------------------------
 
         })

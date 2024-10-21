@@ -352,7 +352,7 @@
             "imgclass": "poco"
         },
         {
-            "id": "iq00",
+            "id": "iQOO",
             "img": "https://m.media-amazon.com/images/I/61sY8BGOyEL._AC_UY327_QL65_.jpg",
             "spons": "Sponsored",
             "h2": "iQOO Z9x 5G (Storm Grey, 4 GB RAM, 128 GB Storage) | Snapdragon 6 Gen 1 with 560k+ AnTuTu Score | 6000mAh Battery with 7.99mm Slim Design | 44W FlashCharge",
@@ -512,7 +512,7 @@
             "imgclass": "poco"
         },
         {
-            "id": "iq00",
+            "id": "iQOO",
             "img": "https://m.media-amazon.com/images/I/61sY8BGOyEL._AC_UY327_QL65_.jpg",
             "spons": "Sponsored",
             "h2": "iQOO Z9x 5G (Storm Grey, 4 GB RAM, 128 GB Storage) | Snapdragon 6 Gen 1 with 560k+ AnTuTu Score | 6000mAh Battery with 7.99mm Slim Design | 44W FlashCharge",
@@ -529,7 +529,7 @@
             "service": "Service: Installation",
             "addto": "Add to Cart",
             "colors": "+2 colors/patterns",
-            "imgclass": "iq00"
+            "imgclass": "iQOO"
         },
         {
             "id": "poco",
@@ -569,7 +569,7 @@
             "service": "Service: Installation",
             "addto": "Add to Cart",
             "colors": "+2 colors/patterns",
-            "imgclass": "iq00"
+            "imgclass": "realme"
         },
         {
             "id": "infinity",
@@ -788,10 +788,13 @@
         {
             "filter": "Filters",
             "close": "Close",
+            "result":"show 2,457 results",
+            "clear":"Clear Filters",
             "contents":[
                   {
                     "h2":"Primary & Delivery",
                     "h3":"Primary & Delivery",
+                    "class":"primary",
                     "subs":[
                         {
                             "h4": "Delivery",
@@ -815,6 +818,7 @@
                   {
                     "h2":"Mobile Phone Installed RAM Size",
                     "h3":"Smartphones & Basic Mobiles",
+                    "class":"ram",
                     "subs":[
                         {
                             "h4": "Mobile Phone Installed RAM Size",
@@ -825,6 +829,7 @@
                   {
                     "h2":"Cellular Phone Memory Storage Capacity",
                     "h3":"Smartphones & Basic Mobiles",
+                    "class":"storage",
                     "subs":[
                         {
                             "h4": "Cellular Phone Memory Storage Capacity",
@@ -835,6 +840,7 @@
                   {
                     "h2":"Price and Deals",
                     "h3":"Price and Deals",
+                    "class":"price",
                     "subs":[
                         {
                             "h4": "Price",
@@ -851,6 +857,7 @@
                   },{
                     "h2":"Brands",
                     "h3":"Brands",
+                    "class":"brands",
                     "subs":[
                         {
                             "h4":"A - F",
@@ -866,6 +873,7 @@
                   },{
                     "h2":"Cellular Technology",
                     "h3":"Smartphones & Basic Mobiles",
+                    "class":"tech",
                     "subs":[
                         {
                             "h4":"Cellular Technology",
