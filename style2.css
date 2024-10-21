@@ -482,6 +482,7 @@
     border: 1px solid #d5d9d9;
     color: #0f1111;
     min-width: max-content;
+    cursor: pointer;
 }
 .top-right form .in-form span{
     height: 100%;
