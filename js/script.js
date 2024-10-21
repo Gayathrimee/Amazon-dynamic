@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
                 const cartSpanOne = document.createElement('span')
                 cartSpanOne.className = 'nav-sprite'
-                cartSpanOne.innerHTML = '<span>0'
+                cartSpanOne.innerHTML = '<span class="zero">0'
                 navCart.append(cartSpanOne)
 
                 navRight.append(navSign,navPerson,navCart)
@@ -639,6 +639,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
         // stickyDiv.style.position = 'sticky'
 
         // ------
+
+        // -------------------------------------------
+
+
         renderingPage(data.Phones)
         // -------------------------
         })

@@ -150,8 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const anchorFour = document.createElement('a')
 
                 const fourDiv = document.createElement('div')
-                const fourZero = document.createElement('span')
-                fourZero.textContent = '0'
+                fourDiv.innerHTML = '<span class ="zero">0'
                 const fourSpan = document.createElement('p')
                 fourSpan.className = 'four-p nav-sprite-3'
 
@@ -159,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 fourDivTwo.className = 'cart-span'
                 fourDivTwo.textContent = item.cart
 
-                fourDiv.append(fourZero, fourSpan)
+                fourDiv.append( fourSpan)
                 anchorFour.append(fourDiv, fourDivTwo)
 
                 navRight.append(anchorOne, anchorTwo, anchorThree, anchorFour)
@@ -1009,6 +1008,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             })
             // -------------------------------------------
+
+
+            let value = 0
+
+            const addToCart = document.querySelectorAll('.addcart button')
+            addToCart.forEach(cart =>{
+                cart.addEventListener('click', ()=>{
+
+                    const cartValue = document.querySelector('.zero')
+
+                    value ++
+                    
+                    cartValue.textContent = value
+
+                    console.log("cartValue",cartValue)
+
+                }) 
+            })
             // -------------------------------------------
 
         })
